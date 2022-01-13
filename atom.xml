@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Jim_shop</title>
+  
+  <subtitle>Github pages</subtitle>
+  <link href="https://jim-shop.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://jim-shop.github.io/"/>
+  <updated>2022-01-13T05:28:46.617Z</updated>
+  <id>https://jim-shop.github.io/</id>
+  
+  <author>
+    <name>Jim_shop</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="https://jim-shop.github.io/2022/01/13/hello-world/"/>
+    <id>https://jim-shop.github.io/2022/01/13/hello-world/</id>
+    <published>2022-01-13T05:18:48.000Z</published>
+    <updated>2022-01-13T05:28:46.617Z</updated>
+    
+    <content type="html"><![CDATA[<p>你好。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;你好。&lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    
+    <category term="hello world" scheme="https://jim-shop.github.io/tags/hello-world/"/>
+    
+  </entry>
+  
+</feed>
