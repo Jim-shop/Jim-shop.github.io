@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://jim-shop.github.io/2022/03/07/Git%E5%8D%8F%E4%BD%9C%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97/</loc>
+    
+    <lastmod>2022-03-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://jim-shop.github.io/2022/03/07/GITignore%E6%96%87%E4%BB%B6%E7%BC%96%E5%86%99%E6%96%B9%E6%B3%95/</loc>
+    
+    <lastmod>2022-03-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://jim-shop.github.io/2022/01/13/hello-world/</loc>
     
     <lastmod>2022-01-13</lastmod>
@@ -13,7 +31,7 @@
 
   <url>
     <loc>https://jim-shop.github.io/</loc>
-    <lastmod>2022-03-06</lastmod>
+    <lastmod>2022-03-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -21,7 +39,7 @@
   
   <url>
     <loc>https://jim-shop.github.io/tags/hello-world/</loc>
-    <lastmod>2022-03-06</lastmod>
+    <lastmod>2022-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>

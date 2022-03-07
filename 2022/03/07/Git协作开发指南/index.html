@@ -34,62 +34,6 @@
 
     
     
-    
-        <script>
-  if (typeof MathJax === 'undefined') {
-    window.MathJax = {
-      loader: {
-        
-            load: ['[tex]/mhchem'],
-        
-        source: {
-          '[tex]/amsCd': '[tex]/amscd',
-          '[tex]/AMScd': '[tex]/amscd'
-        }
-      },
-      tex: {
-        inlineMath: {'[+]': [['$', '$']]},
-        
-            packages: {'[+]': ['mhchem']},
-        
-        tags: 'ams'
-      },
-      options: {
-        renderActions: {
-          findScript: [10, doc => {
-            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
-              const display = !!node.type.match(/; *mode=display/);
-              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-              const text = document.createTextNode('');
-              node.parentNode.replaceChild(text, node);
-              math.start = {node: text, delim: '', n: 0};
-              math.end = {node: text, delim: '', n: 0};
-              doc.math.push(math);
-            });
-          }, '', false],
-          insertedScript: [200, () => {
-            document.querySelectorAll('mjx-container').forEach(node => {
-              let target = node.parentNode;
-              if (target.nodeName.toLowerCase() === 'li') {
-                target.parentNode.classList.add('has-jax');
-              }
-            });
-          }, '', false]
-        }
-      }
-    };
-    (function () {
-      var script = document.createElement('script');
-      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
-      script.defer = true;
-      document.head.appendChild(script);
-    })();
-  } else {
-    MathJax.startup.document.state(0);
-    MathJax.texReset();
-    MathJax.typeset();
-  }
-</script>
           
 
     
@@ -97,8 +41,8 @@
     
     
     <title>
-          
-            Jim_shop
+        
+            Git协作开发指南 | Jim_shop
         
     </title>
     
@@ -170,9 +114,12 @@
     </v-list>
     <v-divider></v-divider>
     
-        <v-list id="sub-menu" class="font-weight-medium" dense>
-            
-        </v-list>    
+        <div class="post-toc">
+            <a href="/2022/03/07/Git%E5%8D%8F%E4%BD%9C%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97/" class="toc-header">文章目录</a>
+            <div class="toc-content">
+                <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Git%E5%8D%8F%E4%BD%9C%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97"><span class="toc-number">1.</span> <span class="toc-text">Git协作开发指南</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-number">1.1.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%8B%89%E5%8F%96"><span class="toc-number">1.2.</span> <span class="toc-text">1. 拉取</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%88%9B%E5%BB%BA%E5%B9%B6%E5%88%87%E6%8D%A2%E5%88%B0%E6%96%B0%E5%88%86%E6%94%AF"><span class="toc-number">1.3.</span> <span class="toc-text">2. 创建并切换到新分支</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%BC%80%E5%8F%91"><span class="toc-number">1.4.</span> <span class="toc-text">3. 开发</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E6%8F%90%E4%BA%A4"><span class="toc-number">1.5.</span> <span class="toc-text">4. 提交</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E6%8E%A8%E9%80%81"><span class="toc-number">1.6.</span> <span class="toc-text">5. 推送</span></a></li></ol></li></ol>
+            </div>
+        </div>
     
 
     <div id="footer">
@@ -273,146 +220,97 @@
   </v-col>
 </v-row>
 
-                            <v-card class="elevation-2 index-card">
-  
-    <article class="index-article">
-      
-      <div class="index-article-header">
-        <v-row no-gutters>
-          <v-col cols="auto">
-            <div class="index-article-header-date font-weight-medium">
-              2022-03-07
-            </div>
-          </v-col>
-          <v-spacer></v-spacer>
-          <v-col cols="auto">
-            
-          </v-col>
-        </v-row>
-        <span>
+                            <v-card class="elevation-2 post-card">
+    
+    
+        <div class="post-header">
+  <a class="post-header-title font-weight-medium" href="/2022/03/07/Git%E5%8D%8F%E4%BD%9C%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97/">Git协作开发指南</a>
+  <div class="post-header-meta">   
+    <span>
+      <v-icon color="">event</v-icon>
+      发布于:&nbsp;2022-03-07
+    </span>
+    <span>
+      <v-icon color="">event_available</v-icon>
+      更新于:&nbsp;2022-03-07
+    </span>
+    <span>
+      <v-icon color="">folder</v-icon>
+      分类于:&nbsp;未分类
+    </span>
+    
+    <span>
+      <v-icon color="">visibility</v-icon>
+      阅读次数:&nbsp;<span id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv"></span></span>
+    </span>
+    
+  </div>
+</div>
+
+    
+    
+    
+    
+    <div class="post-content typo">
+        <h1 id="Git协作开发指南"><a href="#Git协作开发指南" class="headerlink" title="Git协作开发指南"></a>Git协作开发指南</h1><p>以命令行讲解为主。</p>
+<p>现在有很多Git的图形界面客户端，和敲命令行原理上是一样的，只是把输命令的过程给做成了一个个按钮。</p>
+<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>使用Git进行协作开发的流程一般是</p>
+<ol>
+<li>首先从远程服务器拉取最新的主分支</li>
+<li>从主分支创建本地新分支，切换到这个新分支上</li>
+<li>按常规的方式进行开发</li>
+<li>新分支开发有了进展，在新分支内本地提交</li>
+<li>开发测试正常后，切换到主分支，整合，推送</li>
+</ol>
+<h2 id="1-拉取"><a href="#1-拉取" class="headerlink" title="1. 拉取"></a>1. 拉取</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> 刚克隆下来的仓库路径/</span><br><span class="line">git pull</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-创建并切换到新分支"><a href="#2-创建并切换到新分支" class="headerlink" title="2. 创建并切换到新分支"></a>2. 创建并切换到新分支</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> 刚克隆下来的仓库路径/</span><br><span class="line">git checkout -b 新分支名（自拟）</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-开发"><a href="#3-开发" class="headerlink" title="3. 开发"></a>3. 开发</h2><p>切换分支后，先暂时不用管Git，直接按照常规的方法进行开发就行了，不认识Git的时候怎么开发，现在就怎么开发。</p>
+<h2 id="4-提交"><a href="#4-提交" class="headerlink" title="4. 提交"></a>4. 提交</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> 刚克隆下来的仓库路径/</span><br><span class="line">git commit -a 需要提交的文件/目录 -m <span class="string">&quot;关于本次提交的说明（自拟）&quot;</span></span><br></pre></td></tr></table></figure>
+<p>这样就把开发的成果保存到Git版本管理库中了。</p>
+<blockquote>
+<p><code>需要提交的文件/目录</code>应该有哪些？</p>
+<p>应该只有源代码。你编译出的内容一是可能存在兼容性问题，比如只能在你的电脑上执行，其他电脑上会出现问题，二是为了保持仓库简洁，出于这两点原因，请不要上传。</p>
+</blockquote>
+<blockquote>
+<p><strong>但是每次手敲文件好麻烦呀！</strong></p>
+<p>其实可以把不需要提交的文件/目录名添加到仓库根目录下的<code>.gitignore</code>文件中，这样这些文件就会被Git忽略。<br>于是就可以使用这条命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -a -m <span class="string">&quot;关于本次提交的说明（自拟）&quot;</span></span><br></pre></td></tr></table></figure>
+<p>把<code>需要提交的文件/目录</code>省略，这代表仓库根目录。<br>这样Git就会把<code>.gitignore</code>文件中记录的文件/目录之外的所有文件添加到Git版本管理库中。</p>
+</blockquote>
+<h2 id="5-推送"><a href="#5-推送" class="headerlink" title="5. 推送"></a>5. 推送</h2><p>开发测试正常后，可以切换到主分支，整合，推送。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cd 刚克隆下来的仓库路径/</span><br><span class="line">git checkout master</span><br><span class="line">git merge 之前自拟的新分支名</span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>其实不切换到主分支，直接从新分支上向远程推送也是可以的，命令请查阅Git帮助。但是一般来说整合到主分支推送会更方便一点。</p>
+</blockquote>
+
+    </div>
+    <!--文末结束语-->
+    
+        <div style="text-align:center;color: #ccc;font-size:24px;"> --- 本文结束 <i class="fas fa-heart"></i> The End --- </div>
+    
+    <!--页脚广告-->
+    
+    <v-divider></v-divider>
+    
+    <div class="post-nav">             
+              
           
-            <a class="index-article-header-category font-weight-bold" href="/2022/03/07/Git%E5%8D%8F%E4%BD%9C%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97/">未分类></a>
-           
-        </span> 
-        <a class="index-article-header-title font-weight-medium" href="/2022/03/07/Git%E5%8D%8F%E4%BD%9C%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97/">Git协作开发指南</a>
-      </div>
-      
-      <div class="index-article-content">
-        
-          Git协作开发指南以命令行讲解为主。
-现在有很多Git的图形界面客户端，和敲命令行原理上是一样的，只是把输命令的过程给做成了一个个按钮。
-概述使用Git进行协作开发的流程一般是
-
-首先从远程服务器拉取最新的主分支
-从主分支创建本地新分支，切换到这个新分支上
-按常规的方式进行开发
-新分支开发有了进展，在新分支内本地提交
-开发测试正常后，切换到主分支，整合，推送
-
-1. 拉取12cd 刚克隆下来的仓库路径/git pull
-
-2. 创建并切换到新分支12cd 刚克隆下来的仓库路径/git checkout -b 新分支名（自拟）
-
-3. 开发切换分支后，先暂时不用管Git，直接按照常规的方法...
-        
-      </div>
-      
-      <div class="index-article-readmore ">
-        <v-btn text href="/2022/03/07/Git%E5%8D%8F%E4%BD%9C%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97/">阅读更多</v-btn>
-      </div>
-      <v-divider></v-divider>
-    </article> 
-  
-    <article class="index-article">
-      
-      <div class="index-article-header">
-        <v-row no-gutters>
-          <v-col cols="auto">
-            <div class="index-article-header-date font-weight-medium">
-              2022-03-07
+            <div class="post-nav-button float-right">
+                <a class="font-weight-bold text-right" href="/2022/03/07/GITignore%E6%96%87%E4%BB%B6%E7%BC%96%E5%86%99%E6%96%B9%E6%B3%95/">      
+                    GITignore文件编写方法
+                </a>
+                <v-icon>chevron_right</v-icon>
             </div>
-          </v-col>
-          <v-spacer></v-spacer>
-          <v-col cols="auto">
-            
-          </v-col>
-        </v-row>
-        <span>
-          
-            <a class="index-article-header-category font-weight-bold" href="/2022/03/07/GITignore%E6%96%87%E4%BB%B6%E7%BC%96%E5%86%99%E6%96%B9%E6%B3%95/">未分类></a>
-           
-        </span> 
-        <a class="index-article-header-title font-weight-medium" href="/2022/03/07/GITignore%E6%96%87%E4%BB%B6%E7%BC%96%E5%86%99%E6%96%B9%E6%B3%95/">GITignore文件编写方法</a>
-      </div>
-      
-      <div class="index-article-content">
         
-          .gitignore文件编写方法1. 井号开头的行是注释。1# 井号开头的行是注释。
+    </div>
+</v-card>
 
-2. 格式参照shell的glob模式
-星号（“*”）匹配0个或任意个字符，问号（“?”）匹配一个任意字符1doc/*.txt # 匹配doc/notes.txt，但不会匹配doc/server/arch.txt
-使用两个星号表示匹配任意中间目录1a/**/z #匹配a/z，a/b/c/z等
-[abc]匹配任何一个列在方括号中的字符。简写形式[0-3a-c]相当于[0123abc]
 
-3. 其他规则：
-默认是递归匹配。
-以斜杠（“/”）开头，阻止递归匹配。1/TODO # 只忽略当前目录下的 TODO...
-        
-      </div>
-      
-      <div class="index-article-readmore ">
-        <v-btn text href="/2022/03/07/GITignore%E6%96%87%E4%BB%B6%E7%BC%96%E5%86%99%E6%96%B9%E6%B3%95/">阅读更多</v-btn>
-      </div>
-      <v-divider></v-divider>
-    </article> 
-  
-    <article class="index-article">
-      
-      <div class="index-article-header">
-        <v-row no-gutters>
-          <v-col cols="auto">
-            <div class="index-article-header-date font-weight-medium">
-              2022-01-13
-            </div>
-          </v-col>
-          <v-spacer></v-spacer>
-          <v-col cols="auto">
-            
-              <v-card flat color="secondary" tile class="index-article-header-tag  font-weight-medium">
-                
-                  <span class="index-article-header-tag-content">
-                    <v-icon>fas fa-tag</v-icon>
-                    <a rel="tag" href = /tags/hello-world/ >hello world</a>
-                  </span>
-                
-              </v-card>
-            
-          </v-col>
-        </v-row>
-        <span>
-          
-            <a class="index-article-header-category font-weight-bold" href="/2022/01/13/hello-world/">未分类></a>
-           
-        </span> 
-        <a class="index-article-header-title font-weight-medium" href="/2022/01/13/hello-world/">Hello World</a>
-      </div>
-      
-      <div class="index-article-content">
-        
-          你好。
 
         
-      </div>
-      
-      <div class="index-article-readmore ">
-        <v-btn text href="/2022/01/13/hello-world/">阅读更多</v-btn>
-      </div>
-      <v-divider></v-divider>
-    </article> 
-   
-</v-card>  
-
-         
                             <div id="mobile-footer" class="d-block d-md-none">
                                 <v-divider></v-divider>
                                 <div id="mobile-footer-content">
@@ -441,6 +339,12 @@
 
 
 
+
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@8.4.8/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({
+        startOnLoad: true,
+        theme: "default"
+    });</script>
 
 
 
