@@ -6,7 +6,7 @@
   <link href="https://jim-shop.github.io/atom.xml" rel="self"/>
   
   <link href="https://jim-shop.github.io/"/>
-  <updated>2022-03-07T12:23:29.936Z</updated>
+  <updated>2022-03-07T12:32:41.891Z</updated>
   <id>https://jim-shop.github.io/</id>
   
   <author>
@@ -21,17 +21,18 @@
     <link href="https://jim-shop.github.io/2022/03/07/Mermaid%E6%B5%81%E7%A8%8B%E5%9B%BE%E4%BD%BF%E7%94%A8/"/>
     <id>https://jim-shop.github.io/2022/03/07/Mermaid%E6%B5%81%E7%A8%8B%E5%9B%BE%E4%BD%BF%E7%94%A8/</id>
     <published>2022-03-07T04:14:57.000Z</published>
-    <updated>2022-03-07T12:23:29.936Z</updated>
+    <updated>2022-03-07T12:32:41.891Z</updated>
     
-    <content type="html"><![CDATA[<div class="mermaid">flowchart LR    id --> next</div>]]></content>
+    <content type="html"><![CDATA[<div class="mermaid">flowchart TD    id --> next</div>]]></content>
     
     
       
       
     <summary type="html">&lt;div class=&quot;mermaid&quot;&gt;
-flowchart LR
+flowchart TD
     id --&gt; next
-&lt;/div&gt;</summary>
+&lt;/div&gt;
+</summary>
       
     
     
