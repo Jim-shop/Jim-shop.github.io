@@ -104,6 +104,18 @@
     
         <v-list id="sub-menu" class="font-weight-medium" dense>
             
+                
+                    <v-list-item href="/categories/Git/" link>
+                        <v-badge :value="menuHover" transition="slide-y-transition" inline content="3" >
+                            <v-hover v-model="menuHover">
+                                <v-list-item-content>
+                                    <span>Git</span>                              
+                                </v-list-item-content>                           
+                            </v-hover>
+                        </v-badge>
+                    </v-list-item>
+                
+            
         </v-list>    
     
 
@@ -144,7 +156,7 @@
       </div>
       <div id="site-description">Jim_shop 的 Github pages.</div>
       <div id="mobile-menu" class="d-block d-md-none">
-        <v-text-field label="请输入关键字" data-src="search.xml" v-model="searchHeaderValue" prepend-inner-icon="search" clearable clear-icon="clear" @keydown.enter="EnterSearch(searchHeaderValue,true)"></v-text-field>
+        <v-text-field label="搜索……" data-src="search.xml" v-model="searchHeaderValue" prepend-inner-icon="search" clearable clear-icon="clear" @keydown.enter="EnterSearch(searchHeaderValue,true)"></v-text-field>
         <div class="mobile-mini-menu">
           <v-btn icon href="/">
               <v-icon>home</v-icon>
@@ -175,7 +187,7 @@
   </v-col>  
   <v-col cols="4" align-self="end" class="d-none d-md-block">
     <v-col align-self="end">
-      <v-text-field label="请输入关键字" data-src="search.xml" v-model="searchHeaderValue" prepend-icon="search" clearable clear-icon="clear" @keydown.enter="EnterSearch(searchHeaderValue,true)"></v-text-field>
+      <v-text-field label="搜索……" data-src="search.xml" v-model="searchHeaderValue" prepend-icon="search" clearable clear-icon="clear" @keydown.enter="EnterSearch(searchHeaderValue,true)"></v-text-field>
     </v-col> 
   </v-col>
 </v-row>
