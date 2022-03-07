@@ -6,7 +6,7 @@
   <link href="https://jim-shop.github.io/atom.xml" rel="self"/>
   
   <link href="https://jim-shop.github.io/"/>
-  <updated>2022-03-07T03:29:45.727Z</updated>
+  <updated>2022-03-07T03:30:53.589Z</updated>
   <id>https://jim-shop.github.io/</id>
   
   <author>
@@ -21,14 +21,14 @@
     <link href="https://jim-shop.github.io/2022/03/07/%E5%A4%A7%E7%89%A9%E7%94%A8%E5%88%B0%E7%9A%84%E5%90%91%E9%87%8F%E5%8F%89%E4%B9%98%E6%80%A7%E8%B4%A8/"/>
     <id>https://jim-shop.github.io/2022/03/07/%E5%A4%A7%E7%89%A9%E7%94%A8%E5%88%B0%E7%9A%84%E5%90%91%E9%87%8F%E5%8F%89%E4%B9%98%E6%80%A7%E8%B4%A8/</id>
     <published>2022-03-07T02:36:16.000Z</published>
-    <updated>2022-03-07T03:29:45.727Z</updated>
+    <updated>2022-03-07T03:30:53.589Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="双叉积公式"><a href="#双叉积公式" class="headerlink" title="双叉积公式"></a>双叉积公式</h2><p>$$<br>\overrightarrow{a}\times(\overrightarrow{b}\times\overrightarrow{c})=<br>\overrightarrow{b}\times(\overrightarrow{a}\cdot\overrightarrow{c})<br>-\overrightarrow{c}\times(\overrightarrow{a}\cdot\overrightarrow{b})<br>$$</p>]]></content>
+    <content type="html"><![CDATA[<h2 id="双叉积公式"><a href="#双叉积公式" class="headerlink" title="双叉积公式"></a>双叉积公式</h2><p>$$\overrightarrow{a}\times(\overrightarrow{b}\times\overrightarrow{c})=<br>\overrightarrow{b}\times(\overrightarrow{a}\cdot\overrightarrow{c})<br>-\overrightarrow{c}\times(\overrightarrow{a}\cdot\overrightarrow{b})$$</p>]]></content>
     
     
       
       
-    <summary type="html">&lt;h2 id=&quot;双叉积公式&quot;&gt;&lt;a href=&quot;#双叉积公式&quot; class=&quot;headerlink&quot; title=&quot;双叉积公式&quot;&gt;&lt;/a&gt;双叉积公式&lt;/h2&gt;&lt;p&gt;$$&lt;br&gt;\overrightarrow{a}\times(\overrightarrow{b}\times\ov</summary>
+    <summary type="html">&lt;h2 id=&quot;双叉积公式&quot;&gt;&lt;a href=&quot;#双叉积公式&quot; class=&quot;headerlink&quot; title=&quot;双叉积公式&quot;&gt;&lt;/a&gt;双叉积公式&lt;/h2&gt;&lt;p&gt;$$\overrightarrow{a}\times(\overrightarrow{b}\times\overri</summary>
       
     
     
