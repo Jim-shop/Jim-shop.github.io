@@ -106,10 +106,22 @@
             
                 
                     <v-list-item href="/categories/Git/" link>
-                        <v-badge :value="menuHover" transition="slide-y-transition" inline content="3" >
+                        <v-badge :value="menuHover" transition="slide-y-transition" inline content="2" >
                             <v-hover v-model="menuHover">
                                 <v-list-item-content>
                                     <span>Git</span>                              
+                                </v-list-item-content>                           
+                            </v-hover>
+                        </v-badge>
+                    </v-list-item>
+                
+            
+                
+                    <v-list-item href="/categories/%E5%A4%A7%E7%89%A9/" link>
+                        <v-badge :value="menuHover" transition="slide-y-transition" inline content="1" >
+                            <v-hover v-model="menuHover">
+                                <v-list-item-content>
+                                    <span>大物</span>                              
                                 </v-list-item-content>                           
                             </v-hover>
                         </v-badge>
@@ -201,7 +213,7 @@
             <div class="page-describe">
                 counter.categories
             </div>
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a><span class="category-list-count">3</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%A4%A7%E7%89%A9/">大物</a><span class="category-list-count">1</span></li></ul>
         
     </div>
 </v-card>
