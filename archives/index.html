@@ -124,6 +124,18 @@
                     </v-list-item>
                 
             
+                
+                    <v-list-item href="/categories/%E7%94%B5%E5%B7%A5/" link>
+                        <v-badge :value="menuHover" transition="slide-y-transition" inline content="1" >
+                            <v-hover v-model="menuHover">
+                                <v-list-item-content>
+                                    <span>电工</span>                              
+                                </v-list-item-content>                           
+                            </v-hover>
+                        </v-badge>
+                    </v-list-item>
+                
+            
         </v-list>    
     
 
@@ -211,6 +223,20 @@
                     <span class="timeline-subtitle">归档</span>
                 </v-timeline-item>
                 
+            
+            <v-timeline-item fill-dot small color="secondary lighten-2">
+                <div class="timeline-item-post d-none d-md-block">
+                    <span class="timeline-item-time">2022.03.19</span>
+                    <a href="/2022/03/19/LTspice%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/" class="timeline-item-title">LTspice使用方法</a>
+                </div>
+                <div class="timeline-item-post-mobile d-block d-md-none">
+                    <span class="timeline-item-time">2022.03.19</span><br>
+                    <a href="/2022/03/19/LTspice%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/" class="timeline-item-title">LTspice使用方法</a>
+                </div>
+                <v-divider></v-divider>
+            </v-timeline-item>
+        
+            
             
             <v-timeline-item fill-dot small color="secondary lighten-2">
                 <div class="timeline-item-post d-none d-md-block">

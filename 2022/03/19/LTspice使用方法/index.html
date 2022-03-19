@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="zh-CN,zh-Hans,default">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+    <meta name="renderer" content="webkit"/>
+    <meta name="force-rendering" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <script>if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode)) window.location.href="https://support.dmeng.net/upgrade-your-browser.html?referrer="+encodeURIComponent(window.location.href); </script>
+    
+    
+        <link rel="shortcut icon" href="/images/logo.png">
+    
+     
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.13.1/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.2.30/dist/vuetify.min.css" rel="stylesheet">
+    
+<link rel="stylesheet" href="/css/main.css">
+
+    
+    
+
+
+
+
+
+
+
+    
+    
+          
+
+    
+    
+    
+    
+    <title>
+        
+            LTspice使用方法 | Jim_shop
+        
+    </title>
+    
+    
+<meta name="generator" content="Hexo 6.0.0"><link rel="alternate" href="/atom.xml" title="Jim_shop" type="application/atom+xml">
+</head>
+<body>
+    <div id="app">
+        <v-app>
+            <v-content id="page">
+                <v-container fluid>
+                    <v-row>
+                        <v-col cols="2" class="d-none d-md-block">
+                            <div id="sidebar" class="float-right">
+    <a href="/" rel="home">
+        <v-avatar size=96>
+            <img id="logo" src="/images/logo.png">     
+        </v-avatar> 
+    </a>
+    <v-divider></v-divider>
+    <div class="mini-menu">
+        <v-btn icon href="/">
+            <v-icon>home</v-icon>
+        </v-btn>
+        <v-btn icon href="/categories/">
+            <v-icon>folder</v-icon>
+        </v-btn>
+        <v-btn icon href="/tags/">
+            <v-icon>bookmark</v-icon>
+        </v-btn>
+        <v-btn icon @click="SetNightMode">
+            <v-icon>{{ nightMode }}</v-icon>
+        </v-btn>
+    </div>
+    <v-list id="main-menu" class="font-weight-bold" flat>
+        
+            
+            <v-list-item href="/archives/" link>
+            <v-list-item-icon><v-icon>archive</v-icon></v-list-item-icon>
+            <v-list-item-content>
+                归档
+            </v-list-item-content>
+            </v-list-item>
+        
+            
+            <v-list-item href="/about/" link>
+            <v-list-item-icon><v-icon>account_circle</v-icon></v-list-item-icon>
+            <v-list-item-content>
+                关于
+            </v-list-item-content>
+            </v-list-item>
+        
+    </v-list>
+    <v-divider></v-divider>
+    
+        <div class="post-toc">
+            <a href="/2022/03/19/LTspice%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/" class="toc-header">文章目录</a>
+            <div class="toc-content">
+                <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#LTspice-XVII-%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-number">1.</span> <span class="toc-text">LTspice XVII 使用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%AE%89%E8%A3%85%E4%B8%8E%E6%9B%B4%E6%96%B0"><span class="toc-number">1.1.</span> <span class="toc-text">一、安装与更新</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E6%96%B9%E5%BC%8F"><span class="toc-number">1.1.1.</span> <span class="toc-text">安装方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0%E6%96%B9%E5%BC%8F"><span class="toc-number">1.1.2.</span> <span class="toc-text">更新方式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%87%86%E5%A4%87%E5%BE%85%E5%88%86%E6%9E%90%E7%94%B5%E8%B7%AF"><span class="toc-number">1.2.</span> <span class="toc-text">二、准备待分析电路</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%93%E5%BC%80%E7%8E%B0%E6%9C%89%E5%8E%9F%E7%90%86%E5%9B%BE"><span class="toc-number">1.2.1.</span> <span class="toc-text">打开现有原理图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8LTspice%E4%B8%AD%E7%BB%98%E5%88%B6"><span class="toc-number">1.2.2.</span> <span class="toc-text">在LTspice中绘制</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E6%8F%92%E5%85%A5%E5%85%83%E4%BB%B6"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">1. 插入元件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E8%AE%BE%E5%AE%9A%E5%85%83%E4%BB%B6%E5%B1%9E%E6%80%A7"><span class="toc-number">1.2.2.2.</span> <span class="toc-text">2. 设定元件属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E8%BF%9E%E6%8E%A5%E5%85%83%E4%BB%B6"><span class="toc-number">1.2.2.3.</span> <span class="toc-text">3. 连接元件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E5%88%A0%E9%99%A4%E4%B8%8D%E9%9C%80%E8%A6%81%E7%9A%84%E9%83%A8%E5%88%86"><span class="toc-number">1.2.2.4.</span> <span class="toc-text">4. 删除不需要的部分</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-%E6%92%A4%E9%94%80%E4%B8%8E%E9%87%8D%E5%81%9A"><span class="toc-number">1.2.2.5.</span> <span class="toc-text">5. 撤销与重做</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E6%A8%A1%E6%8B%9F"><span class="toc-number">1.3.</span> <span class="toc-text">三、模拟</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%B5%8B%E9%87%8F%E7%94%B5%E6%B5%81"><span class="toc-number">1.3.1.</span> <span class="toc-text">1. 测量电流</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%B5%8B%E9%87%8F%E7%94%B5%E4%BD%8D"><span class="toc-number">1.3.2.</span> <span class="toc-text">2. 测量电位</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E6%B5%8B%E9%87%8F%E7%94%B5%E5%8E%8B"><span class="toc-number">1.3.3.</span> <span class="toc-text">3. 测量电压</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E6%B5%8B%E9%87%8F%E5%8A%9F%E7%8E%87"><span class="toc-number">1.3.4.</span> <span class="toc-text">4. 测量功率</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E5%B9%B3%E5%9D%87%E5%80%BC"><span class="toc-number">1.3.5.</span> <span class="toc-text">查看平均值</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="toc-number">1.4.</span> <span class="toc-text">常用快捷键</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%8E%B7%E5%BE%97%E6%9B%B4%E5%A4%9A%E5%B8%AE%E5%8A%A9"><span class="toc-number">1.5.</span> <span class="toc-text">获得更多帮助</span></a></li></ol></li></ol>
+            </div>
+        </div>
+    
+
+    <div id="footer">
+        <div class="footer-social">
+            
+                
+                <v-btn icon href="https://github.com/jim-shop" target="_blank">
+                    <v-icon>fab fa-github</v-icon>
+                </v-btn>
+            
+        </div>
+        <v-divider></v-divider>
+        <div class="footer-content">
+            
+                <span id="busuanzi_container_site_uv" style="display: none;"> 
+                    总访客量 <span id="busuanzi_value_site_uv"></span>
+                </span>
+                <br>
+            
+            <span>Theme: <a target="_blank" rel="noopener" href="https://github.com/kb1000fx/hexo-theme-insulin">Insulin</a></span><br>
+            <span>Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a></span><br>
+            <span>
+                &copy; 2021 - 2022 
+                Jim_shop
+            </span>
+        </div>
+    </div>
+</div>
+
+                        </v-col>
+                        <v-col cols="12" md="10">
+                            <v-row>
+  <v-col cols="12" md="8" align-self="end">
+    <div id="site-header">
+      <div id="site-title">
+        <a href="/" rel="home">Jim_shop</a>
+      </div>
+      <div id="site-description">Jim_shop 的 Github pages.</div>
+      <div id="mobile-menu" class="d-block d-md-none">
+        <v-text-field label="搜索……" data-src="search.xml" v-model="searchHeaderValue" prepend-inner-icon="search" clearable clear-icon="clear" @keydown.enter="EnterSearch(searchHeaderValue,true)"></v-text-field>
+        <div class="mobile-mini-menu">
+          <v-btn icon href="/">
+              <v-icon>home</v-icon>
+          </v-btn>
+          <v-btn icon href="/categories/">
+              <v-icon>folder</v-icon>
+          </v-btn>
+          <v-btn icon href="/tags/">
+              <v-icon>bookmark</v-icon>
+          </v-btn>
+          <v-btn icon @click="SetNightMode">
+              <v-icon>{{ nightMode }}</v-icon>
+          </v-btn>
+          
+            
+            <v-btn icon href="/archives/">
+              <v-icon>archive</v-icon>
+            </v-btn>
+          
+            
+            <v-btn icon href="/about/">
+              <v-icon>account_circle</v-icon>
+            </v-btn>
+          
+        </div>
+      </div>    
+    </div>
+  </v-col>  
+  <v-col cols="4" align-self="end" class="d-none d-md-block">
+    <v-col align-self="end">
+      <v-text-field label="搜索……" data-src="search.xml" v-model="searchHeaderValue" prepend-icon="search" clearable clear-icon="clear" @keydown.enter="EnterSearch(searchHeaderValue,true)"></v-text-field>
+    </v-col> 
+  </v-col>
+</v-row>
+
+                            <v-card class="elevation-2 post-card">
+    
+    
+        <div class="post-header">
+  <a class="post-header-title font-weight-medium" href="/2022/03/19/LTspice%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/">LTspice使用方法</a>
+  <div class="post-header-meta">   
+    <span>
+      <v-icon color="">event</v-icon>
+      发布于:&nbsp;2022-03-19
+    </span>
+    <span>
+      <v-icon color="">event_available</v-icon>
+      更新于:&nbsp;2022-03-19
+    </span>
+    <span>
+      <v-icon color="">folder</v-icon>
+      分类于:&nbsp;<a class="category-link" href="/categories/%E7%94%B5%E5%B7%A5/">电工</a>
+    </span>
+    
+    <span>
+      <v-icon color="">visibility</v-icon>
+      阅读次数:&nbsp;<span id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv"></span></span>
+    </span>
+    
+  </div>
+</div>
+
+    
+    
+    
+    
+    <div class="post-content typo">
+        <h1 id="LTspice-XVII-使用方法"><a href="#LTspice-XVII-使用方法" class="headerlink" title="LTspice XVII 使用方法"></a>LTspice XVII 使用方法</h1><p>LTspice 是 ANALOG DEVICES 公司出品的一款免费高性能仿真电路模拟器（Simulation program with integrated circuit emphasis, SPICE）。</p>
+<h2 id="一、安装与更新"><a href="#一、安装与更新" class="headerlink" title="一、安装与更新"></a>一、安装与更新</h2><h3 id="安装方式"><a href="#安装方式" class="headerlink" title="安装方式"></a>安装方式</h3><p>访问<a target="_blank" rel="noopener" href="https://www.analog.com/cn/design-center/design-tools-and-calculators/ltspice-simulator.html">官网</a>下载安装即可。<br>软件自带Analog Devices公司的元件库。</p>
+<h3 id="更新方式"><a href="#更新方式" class="headerlink" title="更新方式"></a>更新方式</h3><p>一般来说软件会自动探测更新，但如果立即需要最新版本的话，可以打开LTspice软件，手动点击菜单栏<code>Tools-&gt;Sync Release</code>触发软件和元件库更新。</p>
+<h2 id="二、准备待分析电路"><a href="#二、准备待分析电路" class="headerlink" title="二、准备待分析电路"></a>二、准备待分析电路</h2><p>使用LTspice软件的其他功能的第一步是要在LTspice软件中有一张原理图。可以从文件中打开现有原理图，也可以创建空白原理图，在LTspice中直接绘制（当然，从文件中打开的原理图也可以在LTspice中编辑）。</p>
+<h3 id="打开现有原理图"><a href="#打开现有原理图" class="headerlink" title="打开现有原理图"></a>打开现有原理图</h3><p>点击菜单栏<code>File-&gt;Open</code>，或点击工具栏上的<code>📂</code>按钮，即可选择现有原理图。LTspice的原理图扩展名为<code>.asc</code>。</p>
+<h3 id="在LTspice中绘制"><a href="#在LTspice中绘制" class="headerlink" title="在LTspice中绘制"></a>在LTspice中绘制</h3><p>点击菜单栏<code>File-&gt;New Schematic</code>，或点击工具栏的<code>📄</code>，或按下快捷键<code>Ctrl+N</code>，即可创建空白原理图。<strong>画完记得保存。</strong></p>
+<h4 id="1-插入元件"><a href="#1-插入元件" class="headerlink" title="1. 插入元件"></a>1. 插入元件</h4><p>点击工具栏上的元件（或者点击菜单栏<code>Edit</code>下的元件，或者按对应快捷键），将鼠标移动到需要插入元件的位置，点击鼠标左键即可插入，如果元件的方向不对，可以在按下鼠标左键之前按照状态栏上的提示，按<code>Ctrl+E</code>镜像，按<code>Ctrl+R</code>旋转。成功插入一个元件之后，不会自动退出插入模式，可以直接再移动鼠标点击左键等创建另一个元件。插入完毕后按<code>Esc</code>或鼠标右键结束。<br>如果工具栏上找不到需要的元件，可以点击<code>Component</code>（<code>F2</code>）从中选择需要的其他元件。</p>
+<h4 id="2-设定元件属性"><a href="#2-设定元件属性" class="headerlink" title="2. 设定元件属性"></a>2. 设定元件属性</h4><p>鼠标移动到元件上方，点击右键，即可设定元件电阻&#x2F;电压等电学属性。支持单位：n,u,m(M),k,MEG,G。</p>
+<h4 id="3-连接元件"><a href="#3-连接元件" class="headerlink" title="3. 连接元件"></a>3. 连接元件</h4><p>点击工具栏上的<code>🖊</code>按钮（<code>F3</code>）即可画电线，同样画完按<code>Esc</code>或右键退出。</p>
+<h4 id="4-删除不需要的部分"><a href="#4-删除不需要的部分" class="headerlink" title="4. 删除不需要的部分"></a>4. 删除不需要的部分</h4><p>按<code>Delete</code>或<code>F5</code>键进入删除模式，点击或框选被删除的元件即可删除。删除完毕后按<code>Esc</code>或右键退出。</p>
+<h4 id="5-撤销与重做"><a href="#5-撤销与重做" class="headerlink" title="5. 撤销与重做"></a>5. 撤销与重做</h4><p><code>F9</code>撤销，<code>Shift+F9</code>重做。</p>
+<h2 id="三、模拟"><a href="#三、模拟" class="headerlink" title="三、模拟"></a>三、模拟</h2><p>点击工具栏上<code>🏃</code>按钮，即可开始模拟。首次执行模拟会弹出配置界面，一般只输入模拟时间就能开始模拟。<br>进入模拟后会自动打开一个<code>.raw</code>文件，画出所选的测量属性的图。在<code>.raw</code>窗口中拖动鼠标画方框，即可局部放大，按<code>空格</code>则显示全部。</p>
+<h3 id="1-测量电流"><a href="#1-测量电流" class="headerlink" title="1. 测量电流"></a>1. 测量电流</h3><p>在原理图中点击被测元件。（鼠标光标应该是一个钳形电流表的形状）</p>
+<h3 id="2-测量电位"><a href="#2-测量电位" class="headerlink" title="2. 测量电位"></a>2. 测量电位</h3><p>在原理图中所测位置的导线上点击。（鼠标光标应该是红表笔的形状）</p>
+<h3 id="3-测量电压"><a href="#3-测量电压" class="headerlink" title="3. 测量电压"></a>3. 测量电压</h3><p>在原理图中所测的一段所在位置的导线上点下左键，不放手，拖动到所测的另一端所在位置的导线上，松手。前者位置是红表笔，后者位置是黑表笔。（鼠标光标应该是从红表笔拖到黑表笔）</p>
+<h3 id="4-测量功率"><a href="#4-测量功率" class="headerlink" title="4. 测量功率"></a>4. 测量功率</h3><p>按下<code>Alt</code>点击原理图中的被测元件。（鼠标光标应该是一个温度计）</p>
+<h3 id="查看平均值"><a href="#查看平均值" class="headerlink" title="查看平均值"></a>查看平均值</h3><p>按下<code>Alt</code>并点击轨迹线标题。</p>
+<h2 id="常用快捷键"><a href="#常用快捷键" class="headerlink" title="常用快捷键"></a>常用快捷键</h2><table>
+<thead>
+<tr>
+<th align="center">分类</th>
+<th align="left">原理图</th>
+<th align="left">元件图</th>
+<th align="left">波形图</th>
+<th align="left">网表</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">编辑</td>
+<td align="left"><code>ESC</code>退出模式</td>
+<td align="left"><code>ESC</code>退出模式</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="left"><code>F3</code>导线绘制</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="left"><code>F5</code>删除</td>
+<td align="left"><code>F5</code>删除</td>
+<td align="left"><code>F5</code>删除</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="left"><code>F6</code>复制</td>
+<td align="left"><code>F6</code>复制</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="left"><code>F7</code>移动</td>
+<td align="left"><code>F7</code>移动</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="left"><code>F8</code>拖拽</td>
+<td align="left"><code>F8</code>拖拽</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="left"><code>F9</code>撤销</td>
+<td align="left"><code>F9</code>撤销</td>
+<td align="left"><code>F9</code>撤销</td>
+<td align="left"><code>F9</code>撤销</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="left"><code>Shift+F9</code>重做</td>
+<td align="left"><code>Shift+F9</code>重做</td>
+<td align="left"><code>Shift+F9</code>重做</td>
+<td align="left"><code>Shift+F9</code>重做</td>
+</tr>
+<tr>
+<td align="center">视图</td>
+<td align="left"><code>Ctrl+Z</code>视图缩放</td>
+<td align="left"><code>Ctrl+Z</code>视图缩放</td>
+<td align="left"><code>Ctrl+Z</code>视图缩放</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="left"><code>Ctrl+B</code>恢复缩放</td>
+<td align="left"><code>Ctrl+B</code>恢复缩放</td>
+<td align="left"><code>Ctrl+B</code>恢复缩放</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="left"><code>空格</code>显示全部</td>
+<td align="left"></td>
+<td align="left"><code>空格或Ctrl+E</code>显示全部</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="left"><code>Ctrl+G</code>显隐网格</td>
+<td align="left"></td>
+<td align="left"><code>Ctrl+G</code>显隐网格</td>
+<td align="left"><code>Ctrl+G</code>跳转到行</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="left"><code>Ctrl+H</code>暂停模拟</td>
+<td align="left"></td>
+<td align="left"><code>Ctrl+H</code>暂停模拟</td>
+<td align="left"><code>Ctrl+H</code>暂停模拟</td>
+</tr>
+</tbody></table>
+<p>详见<a target="_blank" rel="noopener" href="https://www.analog.com/media/en/news-marketing-collateral/solutions-bulletins-brochures/ltspice_shortcutflyer.pdf">官方指南</a>。</p>
+<h2 id="获得更多帮助"><a href="#获得更多帮助" class="headerlink" title="获得更多帮助"></a>获得更多帮助</h2><ol>
+<li>可以瞥一眼状态栏。在状态栏上LTspice会提醒当前情况下你按左键&#x2F;右键&#x2F;键盘快捷键能实现什么功能。</li>
+<li>工具栏上的工具也可以在菜单栏里面找到，菜单栏里面还会额外提示对应的快捷键。</li>
+<li>可以直接在软件中敲下<code>F1</code>，或点击菜单栏的<code>Help</code>选项查看本地帮助。</li>
+<li>可以访问LTspice<a target="_blank" rel="noopener" href="https://www.analog.com/cn/design-center/design-tools-and-calculators/ltspice-simulator.html">官网</a>查看帮助。</li>
+</ol>
+
+    </div>
+    <!--文末结束语-->
+    
+        <div style="text-align:center;color: #ccc;font-size:24px;"> （EOF） </div>
+    
+    <!--页脚广告-->
+    
+    <v-divider></v-divider>
+    
+    <div class="post-nav">             
+              
+          
+            <div class="post-nav-button float-right">
+                <a class="font-weight-bold text-right" href="/2022/03/07/Mermaid%E6%B5%81%E7%A8%8B%E5%9B%BE%E4%BD%BF%E7%94%A8/">      
+                    Mermaid流程图使用
+                </a>
+                <v-icon>chevron_right</v-icon>
+            </div>
+        
+    </div>
+</v-card>
+
+
+
+        
+                            <div id="mobile-footer" class="d-block d-md-none">
+                                <v-divider></v-divider>
+                                <div id="mobile-footer-content">
+                                    <span>Theme: <a target="_blank" rel="noopener" href="https://github.com/kb1000fx/hexo-theme-insulin">Insulin</a> &nbsp; Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a></span><br>
+                                    <span> &copy; 2021 - 2022 Jim_shop</span>
+                                </div>
+                            </div>                   
+                        </v-col>                                            
+                    </v-row>
+                </v-container>
+            </v-content>
+        </v-app>
+    </div>
+    
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+<script src="https://cdn.jsdelivr.net/npm/vuetify@2.2.30"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-base64@3.5.2/base64.min.js"></script>
+
+<script src="/js/main.js"></script>
+
+
+
+
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@8.13.10/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({
+        startOnLoad: true,
+        theme: "default"
+    });</script>
+
+
+
+
+
+</body>
+</html>
