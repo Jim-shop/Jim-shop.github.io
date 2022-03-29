@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>《电路与电子技术》笔记</title>
+      <link href="/2022/03/29/%E3%80%8A%E7%94%B5%E8%B7%AF%E4%B8%8E%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E3%80%8B%E7%AC%94%E8%AE%B0/"/>
+      <url>/2022/03/29/%E3%80%8A%E7%94%B5%E8%B7%AF%E4%B8%8E%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E3%80%8B%E7%AC%94%E8%AE%B0/</url>
+      
+        <content type="html"><![CDATA[<h1 id="《电路与电子技术》笔记"><a href="#《电路与电子技术》笔记" class="headerlink" title="《电路与电子技术》笔记"></a>《电路与电子技术》笔记</h1><h2 id="第一章-电路模型与基本定律"><a href="#第一章-电路模型与基本定律" class="headerlink" title="第一章 电路模型与基本定律"></a>第一章 电路模型与基本定律</h2><h3 id="1-电路的组成与电路模型"><a href="#1-电路的组成与电路模型" class="headerlink" title="1. 电路的组成与电路模型"></a>1. 电路的组成与电路模型</h3><ul><li><p><strong>电路</strong>是由电气设备或元器件通过导线按照一定的目的和方式连接而成的电荷流动的通路。</p></li><li><p>任何电路都可分为<strong>电源、负载和中间环节</strong>三个基本组成部分。</p></li><li><p><strong>电路模型元器件</strong>（理想电路元器件）是对实际元器件进行模型化或理想化处理构造的。由理想电路元器件和理想导体所构成的电路，称为实际电路的<strong>电路模型</strong>。</p></li><li><p>电路模型中，推动电路工作的电源、信号源，称为<strong>激励</strong>。</p></li><li><p><strong>电路分析</strong>是在已知电路的结构和元器件参数的条件下，定量分析电路的激励和响应之间的关系。</p></li></ul><h3 id="2-电压、电流的参考方向"><a href="#2-电压、电流的参考方向" class="headerlink" title="2. 电压、电流的参考方向"></a>2. 电压、电流的参考方向</h3><p>瞬时电流 $i(t)&#x3D;\frac{\text{d}q}{\text{d}t}$</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 电工 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>LTspice使用方法</title>
       <link href="/2022/03/19/LTspice%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/"/>
       <url>/2022/03/19/LTspice%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</url>
