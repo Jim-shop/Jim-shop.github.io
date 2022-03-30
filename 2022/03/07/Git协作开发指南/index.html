@@ -234,9 +234,9 @@
 </blockquote>
 <blockquote>
 <p><strong>但是每次手敲文件好麻烦呀！</strong></p>
-<p>其实可以把不需要提交的文件/目录名添加到仓库根目录下的<code>.gitignore</code>文件中，这样这些文件就会被Git忽略。<br>于是就可以使用这条命令：</p>
+<p>其实可以把不需要提交的文件&#x2F;目录名添加到仓库根目录下的<code>.gitignore</code>文件中，这样这些文件就会被Git忽略。<br>于是就可以使用这条命令：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -a -m <span class="string">&quot;关于本次提交的说明（自拟）&quot;</span></span><br></pre></td></tr></table></figure>
-<p>把<code>需要提交的文件/目录</code>省略，这代表仓库根目录。<br>这样Git就会把<code>.gitignore</code>文件中记录的文件/目录之外的所有文件添加到Git版本管理库中。</p>
+<p>把<code>需要提交的文件/目录</code>省略，这代表仓库根目录。<br>这样Git就会把<code>.gitignore</code>文件中记录的文件&#x2F;目录之外的所有文件添加到Git版本管理库中。</p>
 </blockquote>
 <h2 id="5-推送"><a href="#5-推送" class="headerlink" title="5. 推送"></a>5. 推送</h2><p>开发测试正常后，可以切换到主分支，整合，推送。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cd 刚克隆下来的仓库路径/</span><br><span class="line">git checkout master</span><br><span class="line">git merge 之前自拟的新分支名</span><br><span class="line">git push</span><br></pre></td></tr></table></figure>

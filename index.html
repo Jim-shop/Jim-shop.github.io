@@ -169,11 +169,11 @@
                 
             
                 
-                    <v-list-item href="/categories/%E5%A4%A7%E7%89%A9/" link>
-                        <v-badge :value="menuHover" transition="slide-y-transition" inline content="1" >
+                    <v-list-item href="/categories/%E7%94%B5%E5%B7%A5/" link>
+                        <v-badge :value="menuHover" transition="slide-y-transition" inline content="2" >
                             <v-hover v-model="menuHover">
                                 <v-list-item-content>
-                                    <span>大物</span>                              
+                                    <span>电工</span>                              
                                 </v-list-item-content>                           
                             </v-hover>
                         </v-badge>
@@ -181,11 +181,11 @@
                 
             
                 
-                    <v-list-item href="/categories/%E7%94%B5%E5%B7%A5/" link>
-                        <v-badge :value="menuHover" transition="slide-y-transition" inline content="2" >
+                    <v-list-item href="/categories/%E5%A4%A7%E7%89%A9/" link>
+                        <v-badge :value="menuHover" transition="slide-y-transition" inline content="1" >
                             <v-hover v-model="menuHover">
                                 <v-list-item-content>
-                                    <span>电工</span>                              
+                                    <span>大物</span>                              
                                 </v-list-item-content>                           
                             </v-hover>
                         </v-badge>
@@ -282,6 +282,15 @@
           <v-spacer></v-spacer>
           <v-col cols="auto">
             
+              <v-card flat color="secondary" tile class="index-article-header-tag  font-weight-medium">
+                
+                  <span class="index-article-header-tag-content">
+                    <v-icon>fas fa-tag</v-icon>
+                    <a rel="tag" href = /tags/%E7%94%B5%E5%B7%A5/ >电工</a>
+                  </span>
+                
+              </v-card>
+            
           </v-col>
         </v-row>
         <span>
@@ -294,7 +303,7 @@
       
       <div class="index-article-content">
         
-          《电路与电子技术》笔记第一章 电路模型与基本定律1. 电路的组成与电路模型
+          电路和电路模型的基本概念
 电路是由电气设备或元器件通过导线按照一定的目的和方式连接而成的电荷流动的通路。
 
 任何电路都可分为电源、负载和中间环节三个基本组成部分。
@@ -306,7 +315,10 @@
 电路分析是在已知电路的结构和元器件参数的条件下，定量分析电路的激励和响应之间的关系。
 
 
-2. 电压、电流的参考方向瞬时电流 $i(t)&#x3D;\frac{\text{d}q}...
+电压、电流
+瞬时电流 $i(t)&#x3D;\dfrac{\text{d}q}{\text{d}t}$
+
+当电流的方向和大小均不随时间而变化...
         
       </div>
       
@@ -547,7 +559,7 @@ flowchart TD
 
 3. 其他规则：
 默认是递归匹配。
-以斜杠（“/”）开头，阻止递归匹配。1/TODO # 只忽略当前目录下的 TODO...
+以斜杠（“&#x2F;”）开头，阻止递归匹配。1/TODO # 只忽略当前目录下的...
         
       </div>
       
