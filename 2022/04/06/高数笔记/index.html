@@ -34,6 +34,62 @@
 
     
     
+    
+        <script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        
+            load: ['[tex]/mhchem'],
+        
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        
+            packages: {'[+]': ['mhchem']},
+        
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
           
 
     
@@ -41,8 +97,8 @@
     
     
     <title>
-          
-            Jim_shop
+        
+            高数笔记 | Jim_shop
         
     </title>
     
@@ -98,57 +154,12 @@
     </v-list>
     <v-divider></v-divider>
     
-        <v-list id="sub-menu" class="font-weight-medium" dense>
-            
-                
-                    <v-list-item href="/categories/Git/" link>
-                        <v-badge :value="menuHover" transition="slide-y-transition" inline content="2" >
-                            <v-hover v-model="menuHover">
-                                <v-list-item-content>
-                                    <span>Git</span>                              
-                                </v-list-item-content>                           
-                            </v-hover>
-                        </v-badge>
-                    </v-list-item>
-                
-            
-                
-                    <v-list-item href="/categories/%E7%94%B5%E5%B7%A5/" link>
-                        <v-badge :value="menuHover" transition="slide-y-transition" inline content="2" >
-                            <v-hover v-model="menuHover">
-                                <v-list-item-content>
-                                    <span>电工</span>                              
-                                </v-list-item-content>                           
-                            </v-hover>
-                        </v-badge>
-                    </v-list-item>
-                
-            
-                
-                    <v-list-item href="/categories/%E5%A4%A7%E7%89%A9/" link>
-                        <v-badge :value="menuHover" transition="slide-y-transition" inline content="1" >
-                            <v-hover v-model="menuHover">
-                                <v-list-item-content>
-                                    <span>大物</span>                              
-                                </v-list-item-content>                           
-                            </v-hover>
-                        </v-badge>
-                    </v-list-item>
-                
-            
-                
-                    <v-list-item href="/categories/%E9%AB%98%E6%95%B0/" link>
-                        <v-badge :value="menuHover" transition="slide-y-transition" inline content="1" >
-                            <v-hover v-model="menuHover">
-                                <v-list-item-content>
-                                    <span>高数</span>                              
-                                </v-list-item-content>                           
-                            </v-hover>
-                        </v-badge>
-                    </v-list-item>
-                
-            
-        </v-list>    
+        <div class="post-toc">
+            <a href="/2022/04/06/%E9%AB%98%E6%95%B0%E7%AC%94%E8%AE%B0/" class="toc-header">文章目录</a>
+            <div class="toc-content">
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B9%B3%E9%9D%A2%E7%82%B9%E9%9B%86"><span class="toc-number">1.</span> <span class="toc-text">平面点集</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%82%B9%E4%B8%8E%E7%82%B9%E9%9B%86%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="toc-number">2.</span> <span class="toc-text">点与点集的关系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%8D%E8%A6%81%E7%9A%84%E5%B9%B3%E9%9D%A2%E7%82%B9%E9%9B%86"><span class="toc-number">3.</span> <span class="toc-text">重要的平面点集</span></a></li></ol>
+            </div>
+        </div>
     
 
     <div id="footer">
@@ -224,29 +235,84 @@
   </v-col>
 </v-row>
 
-                            <v-card class="elevation-2 index-card">
-    <v-timeline class="timeline" dense>
-        <v-timeline-item class="timeline-header" color="secondary lighten-2">
-            <span class="timeline-title">LTspice</span>
-            <span class="timeline-subtitle">标签</span>
-        </v-timeline-item>
+                            <v-card class="elevation-2 post-card">
+    
+    
+        <div class="post-header">
+  <a class="post-header-title font-weight-medium" href="/2022/04/06/%E9%AB%98%E6%95%B0%E7%AC%94%E8%AE%B0/">高数笔记</a>
+  <div class="post-header-meta">   
+    <span>
+      <v-icon color="">event</v-icon>
+      发布于:&nbsp;2022-04-06
+    </span>
+    <span>
+      <v-icon color="">event_available</v-icon>
+      更新于:&nbsp;2022-04-06
+    </span>
+    <span>
+      <v-icon color="">folder</v-icon>
+      分类于:&nbsp;<a class="category-link" href="/categories/%E9%AB%98%E6%95%B0/">高数</a>
+    </span>
+    
+    <span>
+      <v-icon color="">visibility</v-icon>
+      阅读次数:&nbsp;<span id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv"></span></span>
+    </span>
+    
+  </div>
+</div>
+
+    
+    
+    
+    
+    <div class="post-content typo">
+        <h2 id="平面点集"><a href="#平面点集" class="headerlink" title="平面点集"></a>平面点集</h2><p>在平面上引入了一个直角坐标系后，平面上的点$P$与有序二元实数组$(x,y)$之间建立了一一对应。<br>因此可以把有序实数组$(x,y)$与平面上的点$P$视作是等同的。<br>这种建立了坐标系的平面称为<strong>坐标平面</strong>。</p>
+<p>坐标平面上具有某种性质$P$的点的集合，称为<strong>平面点集</strong>，记作</p>
+<script type="math/tex; mode=display">E=\lbrace (x,y) | \text{ $(x,y)$ 具有性质 $P$ } \rbrace</script><p>设 $P_0(x_0,y_0)$ 是 $xOy$ 平面上的一个点，$\delta$ 是某一个<strong>正数</strong>，与点 $P_0(x_0,y_0)$ 距离小于 $\delta$ 的点 $P(x,y)$ 的<strong>全体</strong>，称为点 $P_0$ 的 $\delta$ <strong>邻域</strong>，记作 $U(P_0,\delta)$ ，即</p>
+<script type="math/tex; mode=display">U(P_0,\delta) = \lbrace P | |PP_0| \lt \delta \rbrace</script><p>去心邻域 $ \mathring{U}(P_0, \delta) $</p>
+<h2 id="点与点集的关系"><a href="#点与点集的关系" class="headerlink" title="点与点集的关系"></a>点与点集的关系</h2><p>设点$P$，点集$E$，两者关系必为三者之一：</p>
+<ul>
+<li>内点<br>（存在 $U(P)$ 使$U(P)\subset E$）</li>
+<li>外点<br>（存在 $U(P)$ 使$U(P)\cap E \ne \varnothing$）</li>
+<li>边界点<br>（点$P$的任意邻域内既含有属于$E$的点，又含有不属于$E$的点）</li>
+</ul>
+<p>$E$的边界点的全体称为$E$的<strong>边界</strong>，记作 $\partial E$。<br>$E$的内点必属于$E$，$E$的外点必不属于$E$，边界点则不一定。</p>
+<p>与上面三个关系<strong>平行</strong>的还有一个关系：<strong>聚点</strong></p>
+<ul>
+<li>如果对于任意给定的$\delta&gt;0$，点$P$的去心邻域内总有$E$中的点，则称$P$为$E$的聚点。<br>（P可以属于$E$，也可以不属于）</li>
+</ul>
+<h2 id="重要的平面点集"><a href="#重要的平面点集" class="headerlink" title="重要的平面点集"></a>重要的平面点集</h2><ul>
+<li>开集（都是内点）</li>
+<li>闭集（含所有边界）</li>
+<li>既非开集也非闭集</li>
+</ul>
+
+    </div>
+    <!--文末结束语-->
+    
+        <div style="text-align:center;color: #ccc;font-size:24px;"> （EOF） </div>
+    
+    <!--页脚广告-->
+    
+    <v-divider></v-divider>
+    
+    <div class="post-nav">             
+              
+          
+            <div class="post-nav-button float-right">
+                <a class="font-weight-bold text-right" href="/2022/03/29/%E3%80%8A%E7%94%B5%E8%B7%AF%E4%B8%8E%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E3%80%8B%E7%AC%94%E8%AE%B0/">      
+                    《电路与电子技术》笔记
+                </a>
+                <v-icon>chevron_right</v-icon>
+            </div>
         
-            <v-timeline-item fill-dot small color="secondary lighten-2">
-                <div class="timeline-item-post d-none d-md-block">
-                    <span class="timeline-item-time">2022.03.19</span>
-                    <a href="/2022/03/19/LTspice%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/" class="timeline-item-title">LTspice使用方法</a>
-                </div>
-                <div class="timeline-item-post-mobile d-block d-md-none">
-                    <span class="timeline-item-time">2022.03.19</span><br>
-                    <a href="/2022/03/19/LTspice%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/" class="timeline-item-title">LTspice使用方法</a>
-                </div>
-                <v-divider></v-divider>
-            </v-timeline-item>
-        
-    </v-timeline>
+    </div>
 </v-card>
 
-         
+
+
+        
                             <div id="mobile-footer" class="d-block d-md-none">
                                 <v-divider></v-divider>
                                 <div id="mobile-footer-content">
@@ -275,6 +341,12 @@
 
 
 
+
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@8.13.10/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({
+        startOnLoad: true,
+        theme: "default"
+    });</script>
 
 
 

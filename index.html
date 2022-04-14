@@ -192,6 +192,18 @@
                     </v-list-item>
                 
             
+                
+                    <v-list-item href="/categories/%E9%AB%98%E6%95%B0/" link>
+                        <v-badge :value="menuHover" transition="slide-y-transition" inline content="1" >
+                            <v-hover v-model="menuHover">
+                                <v-list-item-content>
+                                    <span>高数</span>                              
+                                </v-list-item-content>                           
+                            </v-hover>
+                        </v-badge>
+                    </v-list-item>
+                
+            
         </v-list>    
     
 
@@ -276,6 +288,51 @@
         <v-row no-gutters>
           <v-col cols="auto">
             <div class="index-article-header-date font-weight-medium">
+              2022-04-06
+            </div>
+          </v-col>
+          <v-spacer></v-spacer>
+          <v-col cols="auto">
+            
+              <v-card flat color="secondary" tile class="index-article-header-tag  font-weight-medium">
+                
+                  <span class="index-article-header-tag-content">
+                    <v-icon>fas fa-tag</v-icon>
+                    <a rel="tag" href = /tags/%E9%AB%98%E6%95%B0/ >高数</a>
+                  </span>
+                
+              </v-card>
+            
+          </v-col>
+        </v-row>
+        <span>
+          
+            <a class="index-article-header-category font-weight-bold" href="/categories/%E9%AB%98%E6%95%B0/">高数></a>
+           
+        </span> 
+        <a class="index-article-header-title font-weight-medium" href="/2022/04/06/%E9%AB%98%E6%95%B0%E7%AC%94%E8%AE%B0/">高数笔记</a>
+      </div>
+      
+      <div class="index-article-content">
+        
+          平面点集在平面上引入了一个直角坐标系后，平面上的点$P$与有序二元实数组$(x,y)$之间建立了一一对应。因此可以把有序实数组$(x,y)$与平面上的点$P$视作是等同的。这种建立了坐标系的平面称为坐标平面。
+坐标平面上具有某种性质$P$的点的集合，称为平面点集，记作
+E=\lbrace (x,y) | \text{ $(x,y)$ 具有性质 $P$ } \rbrace设 $P_0(x_0,y_0)$ 是 $xOy$ 平面上的一个点，$\delta$ 是某一个正数，与点 $P_0(x_0,y_0)$ 距离小于 $\delta$ 的点 $P(x,y)$ 的全体，称为点 $P_0$ 的 $\...
+        
+      </div>
+      
+      <div class="index-article-readmore ">
+        <v-btn text href="/2022/04/06/%E9%AB%98%E6%95%B0%E7%AC%94%E8%AE%B0/">阅读更多</v-btn>
+      </div>
+      <v-divider></v-divider>
+    </article> 
+  
+    <article class="index-article">
+      
+      <div class="index-article-header">
+        <v-row no-gutters>
+          <v-col cols="auto">
+            <div class="index-article-header-date font-weight-medium">
               2022-03-29
             </div>
           </v-col>
@@ -316,9 +373,9 @@
 
 
 电压、电流
-瞬时电流 $i(t)&#x3D;\dfrac{\text{d}q}{\text{d}t}$
+瞬时电流 $i(t)=\dfrac{\text{d}q}{\text{d}t}$
 
-当电流的方向和大小均不随时间而变化...
+当电流的方向和大小均不随时间而变化，则称其为...
         
       </div>
       
@@ -448,9 +505,13 @@ flowchart TD
       
       <div class="index-article-content">
         
-          1. 交换$$\overrightarrow{a}\times\overrightarrow{b}&#x3D;-\overrightarrow{b}\times\overrightarrow{a}$$
-2. 分配$$(\overrightarrow{a}+\overrightarrow{b})\times\overrightarrow{c}&#x3D;\overrightarrow{a}\times\overrightarrow{c}+\overrightarrow{b}\times\overrightarrow{c}$$
-3. 双叉积公式$$\overrightarrow{a}\tim...
+          1. 交换
+\overrightarrow{a}\times\overrightarrow{b}
+=-\overrightarrow{b}\times\overrightarrow{a}2. 分配
+(\overrightarrow{a}+\overrightarrow{b})\times\overrightarrow{c}
+=\overrightarrow{a}\times\overrightarrow{c}
++\overrightarrow{b}\times\overrightarrow{c}3. 双叉积公式
+\overrightarrow{a}\times(\overrightarr...
         
       </div>
       
@@ -504,10 +565,8 @@ flowchart TD
 开发测试正常后，切换到主分支，整合，推送
 
 1. 拉取12cd 刚克隆下来的仓库路径/git pull
-
 2. 创建并切换到新分支12cd 刚克隆下来的仓库路径/git checkout -b 新分支名（自拟）
-
-3. 开发切换分支后，先暂时不用管Git，直接按照常规的方法...
+3. 开发切换分支后，先暂时不用管Git，直接按照常规的方法进行...
         
       </div>
       
@@ -551,7 +610,6 @@ flowchart TD
       <div class="index-article-content">
         
           .gitignore文件编写方法1. 井号开头的行是注释。1# 井号开头的行是注释。
-
 2. 格式参照shell的glob模式
 星号（“*”）匹配0个或任意个字符，问号（“?”）匹配一个任意字符1doc/*.txt # 匹配doc/notes.txt，但不会匹配doc/server/arch.txt
 使用两个星号表示匹配任意中间目录1a/**/z #匹配a/z，a/b/c/z等
@@ -559,7 +617,7 @@ flowchart TD
 
 3. 其他规则：
 默认是递归匹配。
-以斜杠（“&#x2F;”）开头，阻止递归匹配。1/TODO # 只忽略当前目录下的...
+以斜杠（“/”）开头，阻止递归匹配。1/TODO # 只忽略当前目录下的 TODO ...
         
       </div>
       
