@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="zh-CN,zh-Hans,default">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+    <meta name="renderer" content="webkit"/>
+    <meta name="force-rendering" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <script>if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode)) window.location.href="https://support.dmeng.net/upgrade-your-browser.html?referrer="+encodeURIComponent(window.location.href); </script>
+    
+    
+        <link rel="shortcut icon" href="/images/logo.png">
+    
+     
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.13.1/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.2.30/dist/vuetify.min.css" rel="stylesheet">
+    
+<link rel="stylesheet" href="/css/main.css">
+
+    
+    
+
+
+
+
+
+
+
+    
+    
+    
+        <script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        
+            load: ['[tex]/mhchem'],
+        
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        
+            packages: {'[+]': ['mhchem']},
+        
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+          
+
+    
+    
+    
+    
+    <title>
+        
+            模电笔记 | Jim_shop
+        
+    </title>
+    
+    
+<meta name="generator" content="Hexo 6.1.0"><link rel="alternate" href="/atom.xml" title="Jim_shop" type="application/atom+xml">
+</head>
+<body>
+    <div id="app">
+        <v-app>
+            <v-content id="page">
+                <v-container fluid>
+                    <v-row>
+                        <v-col cols="2" class="d-none d-md-block">
+                            <div id="sidebar" class="float-right">
+    <a href="/" rel="home">
+        <v-avatar size=96>
+            <img id="logo" src="/images/logo.png">     
+        </v-avatar> 
+    </a>
+    <v-divider></v-divider>
+    <div class="mini-menu">
+        <v-btn icon href="/">
+            <v-icon>home</v-icon>
+        </v-btn>
+        <v-btn icon href="/categories/">
+            <v-icon>folder</v-icon>
+        </v-btn>
+        <v-btn icon href="/tags/">
+            <v-icon>bookmark</v-icon>
+        </v-btn>
+        <v-btn icon @click="SetNightMode">
+            <v-icon>{{ nightMode }}</v-icon>
+        </v-btn>
+    </div>
+    <v-list id="main-menu" class="font-weight-bold" flat>
+        
+            
+            <v-list-item href="/archives/" link>
+            <v-list-item-icon><v-icon>archive</v-icon></v-list-item-icon>
+            <v-list-item-content>
+                归档
+            </v-list-item-content>
+            </v-list-item>
+        
+            
+            <v-list-item href="/about/" link>
+            <v-list-item-icon><v-icon>account_circle</v-icon></v-list-item-icon>
+            <v-list-item-content>
+                关于
+            </v-list-item-content>
+            </v-list-item>
+        
+    </v-list>
+    <v-divider></v-divider>
+    
+        <div class="post-toc">
+            <a href="/2022/04/21/%E6%A8%A1%E7%94%B5%E7%AC%94%E8%AE%B0/" class="toc-header">文章目录</a>
+            <div class="toc-content">
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%8A%E5%AF%BC%E4%BD%93%E7%9A%84%E5%AF%BC%E7%94%B5%E7%89%B9%E6%80%A7"><span class="toc-number">1.</span> <span class="toc-text">半导体的导电特性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%8A%E5%AF%BC%E4%BD%93%E7%9A%84%E5%AF%BC%E7%94%B5%E7%89%B9%E7%82%B9"><span class="toc-number">2.</span> <span class="toc-text">半导体的导电特点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%AC%E5%BE%81%E5%8D%8A%E5%AF%BC%E4%BD%93%E7%9A%84%E7%BB%93%E6%9E%84"><span class="toc-number">3.</span> <span class="toc-text">本征半导体的结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E7%94%B1%E7%94%B5%E5%AD%90%E4%B8%8E%E7%A9%BA%E7%A9%B4"><span class="toc-number">4.</span> <span class="toc-text">自由电子与空穴</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#N%E5%9E%8B%E5%8D%8A%E5%AF%BC%E4%BD%93%E3%80%81P%E5%9E%8B%E5%8D%8A%E5%AF%BC%E4%BD%93"><span class="toc-number">5.</span> <span class="toc-text">N型半导体、P型半导体</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#N%E5%9E%8B%E5%8D%8A%E5%AF%BC%E4%BD%93"><span class="toc-number">5.1.</span> <span class="toc-text">N型半导体</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#P%E5%9E%8B%E5%8D%8A%E5%AF%BC%E4%BD%93"><span class="toc-number">5.2.</span> <span class="toc-text">P型半导体</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PN%E7%BB%93"><span class="toc-number">6.</span> <span class="toc-text">PN结</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#PN%E7%BB%93%E7%9A%84%E5%BD%A2%E6%88%90"><span class="toc-number">6.1.</span> <span class="toc-text">PN结的形成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PN%E7%BB%93%E7%9A%84%E5%8D%95%E5%90%91%E5%AF%BC%E7%94%B5%E6%80%A7"><span class="toc-number">6.2.</span> <span class="toc-text">PN结的单向导电性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#PN%E7%BB%93%E5%A4%96%E5%8A%A0%E6%AD%A3%E5%90%91%E7%94%B5%E5%8E%8B"><span class="toc-number">6.2.1.</span> <span class="toc-text">PN结外加正向电压</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#PN%E7%BB%93%E5%A4%96%E5%8A%A0%E5%8F%8D%E5%90%91%E7%94%B5%E5%8E%8B"><span class="toc-number">6.2.2.</span> <span class="toc-text">PN结外加反向电压</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E6%9E%81%E7%AE%A1"><span class="toc-number">7.</span> <span class="toc-text">二极管</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%8F%E5%AE%89%E7%89%B9%E6%80%A7"><span class="toc-number">7.1.</span> <span class="toc-text">伏安特性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E8%A6%81%E5%8F%82%E6%95%B0"><span class="toc-number">7.2.</span> <span class="toc-text">主要参数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A8%B3%E5%8E%8B%E4%BA%8C%E6%9E%81%E7%AE%A1"><span class="toc-number">8.</span> <span class="toc-text">稳压二极管</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%8F%E5%AE%89%E7%89%B9%E6%80%A7-1"><span class="toc-number">8.1.</span> <span class="toc-text">伏安特性</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%99%B6%E4%BD%93%E7%AE%A1%EF%BC%88%E4%B8%89%E6%9E%81%E7%AE%A1%EF%BC%89"><span class="toc-number">9.</span> <span class="toc-text">晶体管（三极管）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%B5%E6%B5%81%E6%94%BE%E5%A4%A7%E5%8E%9F%E7%90%86"><span class="toc-number">9.1.</span> <span class="toc-text">电流放大原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%B9%E6%80%A7%E6%9B%B2%E7%BA%BF"><span class="toc-number">9.2.</span> <span class="toc-text">特性曲线</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E7%89%B9%E6%80%A7"><span class="toc-number">9.2.1.</span> <span class="toc-text">输入特性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E7%89%B9%E6%80%A7"><span class="toc-number">9.2.2.</span> <span class="toc-text">输出特性</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E8%A6%81%E5%8F%82%E6%95%B0-1"><span class="toc-number">9.3.</span> <span class="toc-text">主要参数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B1%E5%B0%84%E6%9E%81%E7%94%B5%E6%B5%81%E6%94%BE%E5%A4%A7%E7%B3%BB%E6%95%B0-bar-beta-%E5%92%8C-beta"><span class="toc-number">9.3.1.</span> <span class="toc-text">共射极电流放大系数$\bar\beta$和$\beta$</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9B%86-%E5%9F%BA%E6%9E%81%E5%8F%8D%E5%90%91%E9%A5%B1%E5%92%8C%E7%94%B5%E6%B5%81-I-mathrm-CBO"><span class="toc-number">9.3.2.</span> <span class="toc-text">集-基极反向饱和电流$I_\mathrm{CBO}$</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9B%86-%E5%B0%84%E6%9E%81%E7%A9%BF%E9%80%8F%E7%94%B5%E6%B5%81-I-mathrm-CEO"><span class="toc-number">9.3.3.</span> <span class="toc-text">集-射极穿透电流$I_\mathrm{CEO}$</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9B%86%E7%94%B5%E6%9E%81%E6%9C%80%E5%A4%A7%E5%85%81%E8%AE%B8%E7%94%B5%E6%B5%81-I-mathrm-CM"><span class="toc-number">9.3.4.</span> <span class="toc-text">集电极最大允许电流$I_\mathrm{CM}$</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9B%86-%E5%B0%84%E6%9E%81%E5%87%BB%E7%A9%BF%E7%94%B5%E5%8E%8B-U-mathrm-BR-CEO"><span class="toc-number">9.3.5.</span> <span class="toc-text">集-射极击穿电压$U_\mathrm{(BR)CEO}$</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9B%86%E7%94%B5%E6%9E%81%E6%9C%80%E5%A4%A7%E5%85%81%E8%AE%B8%E8%80%97%E6%95%A3%E5%8A%9F%E7%8E%87-P-mathrm-CM"><span class="toc-number">9.3.6.</span> <span class="toc-text">集电极最大允许耗散功率$P_\mathrm{CM}$</span></a></li></ol></li></ol></li></ol>
+            </div>
+        </div>
+    
+
+    <div id="footer">
+        <div class="footer-social">
+            
+                
+                <v-btn icon href="https://github.com/jim-shop" target="_blank">
+                    <v-icon>fab fa-github</v-icon>
+                </v-btn>
+            
+        </div>
+        <v-divider></v-divider>
+        <div class="footer-content">
+            
+                <span id="busuanzi_container_site_uv" style="display: none;"> 
+                    总访客量 <span id="busuanzi_value_site_uv"></span>
+                </span>
+                <br>
+            
+            <span>Theme: <a target="_blank" rel="noopener" href="https://github.com/kb1000fx/hexo-theme-insulin">Insulin</a></span><br>
+            <span>Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a></span><br>
+            <span>
+                &copy; 2021 - 2022 
+                Jim_shop
+            </span>
+        </div>
+    </div>
+</div>
+
+                        </v-col>
+                        <v-col cols="12" md="10">
+                            <v-row>
+  <v-col cols="12" md="8" align-self="end">
+    <div id="site-header">
+      <div id="site-title">
+        <a href="/" rel="home">Jim_shop</a>
+      </div>
+      <div id="site-description">Jim_shop 的 Github pages.</div>
+      <div id="mobile-menu" class="d-block d-md-none">
+        <v-text-field label="搜索……" data-src="search.xml" v-model="searchHeaderValue" prepend-inner-icon="search" clearable clear-icon="clear" @keydown.enter="EnterSearch(searchHeaderValue,true)"></v-text-field>
+        <div class="mobile-mini-menu">
+          <v-btn icon href="/">
+              <v-icon>home</v-icon>
+          </v-btn>
+          <v-btn icon href="/categories/">
+              <v-icon>folder</v-icon>
+          </v-btn>
+          <v-btn icon href="/tags/">
+              <v-icon>bookmark</v-icon>
+          </v-btn>
+          <v-btn icon @click="SetNightMode">
+              <v-icon>{{ nightMode }}</v-icon>
+          </v-btn>
+          
+            
+            <v-btn icon href="/archives/">
+              <v-icon>archive</v-icon>
+            </v-btn>
+          
+            
+            <v-btn icon href="/about/">
+              <v-icon>account_circle</v-icon>
+            </v-btn>
+          
+        </div>
+      </div>    
+    </div>
+  </v-col>  
+  <v-col cols="4" align-self="end" class="d-none d-md-block">
+    <v-col align-self="end">
+      <v-text-field label="搜索……" data-src="search.xml" v-model="searchHeaderValue" prepend-icon="search" clearable clear-icon="clear" @keydown.enter="EnterSearch(searchHeaderValue,true)"></v-text-field>
+    </v-col> 
+  </v-col>
+</v-row>
+
+                            <v-card class="elevation-2 post-card">
+    
+    
+        <div class="post-header">
+  <a class="post-header-title font-weight-medium" href="/2022/04/21/%E6%A8%A1%E7%94%B5%E7%AC%94%E8%AE%B0/">模电笔记</a>
+  <div class="post-header-meta">   
+    <span>
+      <v-icon color="">event</v-icon>
+      发布于:&nbsp;2022-04-21
+    </span>
+    <span>
+      <v-icon color="">event_available</v-icon>
+      更新于:&nbsp;2022-04-28
+    </span>
+    <span>
+      <v-icon color="">folder</v-icon>
+      分类于:&nbsp;<a class="category-link" href="/categories/%E7%94%B5%E5%B7%A5/">电工</a>
+    </span>
+    
+    <span>
+      <v-icon color="">visibility</v-icon>
+      阅读次数:&nbsp;<span id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv"></span></span>
+    </span>
+    
+  </div>
+</div>
+
+    
+    
+    
+    
+    <div class="post-content typo">
+        <h2 id="半导体的导电特性"><a href="#半导体的导电特性" class="headerlink" title="半导体的导电特性"></a>半导体的导电特性</h2><p>自然界的物质按其导电能力分为三类：</p>
+<ul>
+<li>导体</li>
+<li>半导体（一定条件下可以导电）</li>
+<li>绝缘体</li>
+</ul>
+<h2 id="半导体的导电特点"><a href="#半导体的导电特点" class="headerlink" title="半导体的导电特点"></a>半导体的导电特点</h2><p>半导体的导电能力受温度、光照、掺杂的影响：</p>
+<ul>
+<li>当环境温度升高时，半导体的导电能力增强</li>
+<li>当有光照射时，半导体的导电能力增强</li>
+<li>在半导体内掺入微量的某种元素时，半导体的导电能力增强（可以达到几十万到上百万倍）</li>
+</ul>
+<h2 id="本征半导体的结构"><a href="#本征半导体的结构" class="headerlink" title="本征半导体的结构"></a>本征半导体的结构</h2><blockquote>
+<p><strong>本征半导体</strong>就是经过提纯，去掉杂质，结构为晶体的半导体。</p>
+</blockquote>
+<p>（硅和锗）在本征半导体中，所有原子排列整齐，每个原子与相邻的4个原子结合，每个原子的一个价电子与另一个相邻的原子的一个价电子组成一个电子对，把相邻的原子结合在一起，形成共价键结构。</p>
+<h2 id="自由电子与空穴"><a href="#自由电子与空穴" class="headerlink" title="自由电子与空穴"></a>自由电子与空穴</h2><p>在共价键结构的晶体中，每个原子最外层有8个价电子，在常温下他们处于比较稳定的状态。但是，当<strong>环境温度升高</strong>后，共价键结构中的个别价电子受到热激发，便可挣脱共价键的束缚而成为<strong>自由电子</strong>，与此同时，在共价键的原处就留下一个空位，称为<strong>空穴</strong>。环境温度越高，产生的自由电子和空穴就越多。自由电子和空穴同时产生、成对出现、自由电子和空穴数量相等。</p>
+<p>本征半导体中存在自由电子和空穴两种载流子，自由电子可以定向移动导电，空穴可以等效为可以定向移动。。半导体的导电能力有两种：自由电子导电和空穴导电（价电子导电），与金属导电有本质差别，因此有独特的导电特性。</p>
+<h2 id="N型半导体、P型半导体"><a href="#N型半导体、P型半导体" class="headerlink" title="N型半导体、P型半导体"></a>N型半导体、P型半导体</h2><blockquote>
+<p>本征半导体中的载流子是靠热激发产生的，其数量很少，半导体导电能力很差。如果在半导体中掺入其他合适的微量元素，就可以大大提高其导电能力。</p>
+</blockquote>
+<blockquote>
+<p>由于掺入的微量元素不同，可以获得两种类型的半导体：N型半导体和P型半导体。</p>
+</blockquote>
+<h3 id="N型半导体"><a href="#N型半导体" class="headerlink" title="N型半导体"></a>N型半导体</h3><p>在四价硅（锗）晶体中掺入少量的五价元素磷（P），一个五价磷原子便占据一个硅原子的位置。由于掺入晶体的磷原子数比硅原子数少得多，因此整个晶体结构基本不变，只是某些位置上的硅原子被磷原子取代。磷原子中5个价电子只有4个能够和相邻的4个硅原子组成共价键结构，剩下的1个价电子受原子核的吸引很弱，在常温下，这个价电子很容易吸收一定的能量脱离原子核的束缚，成为自由电子，其余的磷原子也是如此。于是，半导体中的自由电子数大量增加，是靠热激发产生的自由电子-空穴数的几十万倍乃至几百万倍，所以参与导电的载流子主要是自由电子。</p>
+<p>因此，我们称这种半导体为电子型半导体，即<strong>N型半导体</strong>。</p>
+<blockquote>
+<p>N &#x3D; negative</p>
+</blockquote>
+<p>在N型半导体中，由于自由电子的数量增加，复合的机会也增加，从而使空穴的数量减少。所以在N型半导体中，自由电子是多数载流子，空穴是少数载流子。</p>
+<h3 id="P型半导体"><a href="#P型半导体" class="headerlink" title="P型半导体"></a>P型半导体</h3><p>在硅（锗）晶体中掺入少量三价元素硼（B），由于每个硼原子只有3个价电子，因此在构成共价键结构时，因缺少1个价电子而形成1个空穴。当相邻原子的价电子获得能量时，就可能来填充这个空穴，相邻原子因失去1个价电子而产生新的空穴。掺入1个硼原子就多1个空穴，于是空穴数大量增加，空穴是多数载流子，自由电子是少数载流子。</p>
+<p>所以我们称这种半导体为空穴型半导体，即<strong>P型半导体</strong>。</p>
+<blockquote>
+<p>P &#x3D; positive</p>
+</blockquote>
+<blockquote>
+<p>无论是N型半导体还是P型半导体，多数载流子的数量主要取决于<strong>掺杂的浓度</strong>，少数载流子的数量则与<strong>温度</strong>有关。</p>
+</blockquote>
+<h2 id="PN结"><a href="#PN结" class="headerlink" title="PN结"></a>PN结</h2><blockquote>
+<p>虽然N型半导体和P型半导体的导电能力增强，但它们还不能直接用来制造半导体器件，必须将这两种半导体结合在一起，形成一个PN结。PN结才是制造各种半导体器件的基础。</p>
+</blockquote>
+<h3 id="PN结的形成"><a href="#PN结的形成" class="headerlink" title="PN结的形成"></a>PN结的形成</h3><p>在<strong>一片半导体晶片</strong>的两边分别掺入三价元素硼和五价元素磷形成P型和N型半导体。</p>
+<blockquote>
+<p>直接拿一片P和N贴贴，如果它们的距离达到原子级别，也能形成PN结。</p>
+</blockquote>
+<p>由于P型区空穴浓度高，N型区空穴浓度低，所以空穴要从P型区向N型区扩散，结果在交界面的左侧留下一些带负电的硼离子（硼离子不能移动）。同样的原因，N型区的自由电子向Р型区扩散，结果在交界面右侧留下一些带正电的磷离子（磷离子不能移动）。于是在交界面两侧的薄层内，由负离子和正离子形成了一个<strong>空间电荷区</strong>，这个空间电荷区称为<strong>PN结</strong>。</p>
+<p>在空间电荷区内，载流子数量极少，空间电荷区又称为<strong>耗尽层</strong>。正负离子虽然带有电荷，但不能移动，不能参与导电，所以空间电荷区的电阻率极高。</p>
+<p>空间电荷区的正负电荷形成一个电场，称为<strong>内电场</strong>，内电场对<strong>多数</strong>载流子的扩散运动起<strong>阻挡</strong>作用，因而空间电荷区又称为<strong>阻挡层</strong>。</p>
+<p>P型区和N型区中的少数载流子的运动称为<strong>漂移运动</strong>。内电场对<strong>少数</strong>载流子的漂移运动起<strong>推动</strong>作用。</p>
+<p>在PN结形成过程中存在两种运动，一种是多数载流子因浓度差而产生的扩散运动，另一种是少数载流子因内电场的出现而产生的漂移运动。运动开始时，是多数载流子的扩散运动导致空间电荷区逐渐加宽，即内电场逐步加强，内电场的加强又使多数载流子的扩散运动逐渐减弱，而使少数载流子的漂移运动逐渐增强。最后，扩散运动和漂移运动达到动态平衡，空间电荷区处于稳定状态，即PN结的宽度就不变了。</p>
+<h3 id="PN结的单向导电性"><a href="#PN结的单向导电性" class="headerlink" title="PN结的单向导电性"></a>PN结的单向导电性</h3><h4 id="PN结外加正向电压"><a href="#PN结外加正向电压" class="headerlink" title="PN结外加正向电压"></a>PN结外加正向电压</h4><blockquote>
+<p>PN结外加正向电压，是指电源的正极接PN结的P型区，电源的负极接PN结的N型区。<br><strong>P正N负</strong><br>PN结外加正向电压时，简称正偏。</p>
+</blockquote>
+<p>PN结外加正向电压时，电源产生的外电场方向与PN结的内电场方向相反。随着外电场的增强，内电场被减弱，使多数载流子的扩散运动得到加强，P型区的空穴和N型区的自由电子进入空间电荷区，空间电荷区变窄，从而形成较大的正向电流，PN结处于导通状态。外电场越强，正向电流就越大，PN结的正向电阻就越小。</p>
+<p>PN结导通时，正向电流的方向是从Р型区流问N型区，即空穴的运动方向。正向电流包括空穴电流和自由电子电流两部分。由于空穴电流实际上是价电子产生的，所以空穴电流和自由电子形成的电流方向是相同的。</p>
+<h4 id="PN结外加反向电压"><a href="#PN结外加反向电压" class="headerlink" title="PN结外加反向电压"></a>PN结外加反向电压</h4><blockquote>
+<p>PN结外加反向电压，是指电源的正极接PN结的N型区，负极接PN结的P型区。<br>PN结外加反向电压时，简称反偏。</p>
+</blockquote>
+<p>此时电源产生的外电场方向与PN结的内电场方向相同。随着外电场的增强，内电场也增强，导致PN结加宽，使多数载流子的扩散运动难以进行，而使少数载流子的漂移运动畅通无阻，形成反向电流。但因少数载流子的数量很少，反向电流也很小，即I≈0，PN结的反向电阻很高，PN结处于截止状态。</p>
+<p>从以上分析可见，PN结外加正向电压时导通，外加反向电压时截止。PN结具有单向导电的特性。</p>
+<h2 id="二极管"><a href="#二极管" class="headerlink" title="二极管"></a>二极管</h2><blockquote>
+<p>在PN结两侧引出两根电极，封装之后就是二极管。</p>
+</blockquote>
+<h3 id="伏安特性"><a href="#伏安特性" class="headerlink" title="伏安特性"></a>伏安特性</h3><p>当二极管外加的正向电压很小时，外电场还不能克服PN结的内电场对多数载流子扩散运动的阻力，故正向电流很小，近似为零。</p>
+<p>当正向电压超过一定数值时，内电场被大大削弱，正向电流增长很快。这个数值的正向电压称为<strong>死区电压</strong>，其大小与材料和环境温度有关。硅管的死区电压约为0.5 V，锗管约为0.1 V。</p>
+<p>在正向特性区，二极管一旦导通，它两端的电压<strong>近似为一常数</strong>，这个电压称为二极管的<strong>正向工作电压</strong>。硅管的工作电压为0.6 ~ 0.7V，锗管的工作电压为0.2 ~ 0.3 V。</p>
+<p>在反向特性区，由少数载流子产生很小的反向电流。此反向电流有两个特点，一是它随温度升高而增大，二是在反向电压不超过某一范围时，反向电流的大小与反向电压的大小无关，基本不变，故称它为<strong>反向饱和电流</strong>。</p>
+<p>当反向电压增加到一定数值时，强电场把原子最外层的<strong>价电子</strong>拉出来，共价键结构被破坏，使载流子数量剧增，二极管的反向电流突然增大，二极管<strong>损坏</strong>，这种情况称为<strong>击穿</strong>。$U_{BR}$称为<strong>反向击穿电压</strong>。</p>
+<p>从以上分析可见，当二极管外加的正向电压大于死区电压时，二极管导通；当二极管外加的反向电压小于击穿电压时，二极管截止。二极管具有单向导电的作用，在电路中相当于一个电子开关。</p>
+<p>理想情况下，二极管正向导通相当于短路，反向截止相当于断路。</p>
+<h3 id="主要参数"><a href="#主要参数" class="headerlink" title="主要参数"></a>主要参数</h3><ol>
+<li><strong>最大整流电流</strong>$I_F$（forward），是指二极管长时间正向导通时，允许流过的<strong>最大正向平均电流</strong>。二极管在使用时不能超过此值，否则将因二极管过热而损坏。</li>
+<li><strong>反向峰值电压</strong>$U_R$（reverse），是指二极管反向截止时允许外加的<strong>最高反向工作电压</strong>，$U_R$的数值大约等于反向击穿电压$U_{BR}$的<strong>一半</strong>，以确保二极管安全工作。</li>
+<li><strong>反向峰值电流</strong>$I_R$（reverse），是指在常温下二极管加反向峰值电压$U_R$时，流经二极管的反向电流。反向电流的大小说明了二极管质量的好坏，反向电流大说明它的单向导电性差，而且受温度影响大。硅管的反向电流较小，一般在几个微安以下；锗管较大，一般为硅管的几十到几百倍。</li>
+</ol>
+<h2 id="稳压二极管"><a href="#稳压二极管" class="headerlink" title="稳压二极管"></a>稳压二极管</h2><blockquote>
+<p>稳压二极管是由硅材料制成的一种特殊的二极管。由于它在电路中与适当的电阻串联后能起到稳定电压的作用，故称为稳压二极管。</p>
+</blockquote>
+<h3 id="伏安特性-1"><a href="#伏安特性-1" class="headerlink" title="伏安特性"></a>伏安特性</h3><p>稳压二极管的伏安特性曲线形状与普通二极管类似，只是反向特性比普通二极管的<strong>反向特性更加陡峭</strong>。</p>
+<p>稳压二极管正向导通时与普通二极管工作状态相同。</p>
+<blockquote>
+<p>但是正向压降比普通二极管大一些。</p>
+</blockquote>
+<p>稳压二极管外加的反向电压达到一定数值时，稳压二极管被击穿，反向电流突然增大。</p>
+<blockquote>
+<p>稳压二极管是特殊工艺制成的，其击穿后<strong>不会损坏</strong>。</p>
+</blockquote>
+<p>稳压二极管工作在反向击穿区时，因为击穿区曲线很陡，稳压二极管两端电压只要变化一个很小的$\Delta U_Z$，稳压二极管的电流就能变化一个很大的$\Delta I_z$，这就是稳压二极管的<strong>稳压特性</strong>。因此，<strong>稳压二极管正常工作的区域是反向击穿区</strong>。</p>
+<h2 id="晶体管（三极管）"><a href="#晶体管（三极管）" class="headerlink" title="晶体管（三极管）"></a>晶体管（三极管）</h2><blockquote>
+<p>晶体管是由两个PN结组成，按其工作方式可分为两类，即NPN型和PNP型。</p>
+</blockquote>
+<p>晶体管有三个区，基区、发射区、集电区。</p>
+<blockquote>
+<p>发射区参杂浓度高；基极厚度薄，参杂浓度低</p>
+</blockquote>
+<p>每个区引出的电极称为基极（B, base）发射极（E, emitter）和集电极（C, collector）。</p>
+<blockquote>
+<p>三极管符号中，BE两极之间有一箭头，NPN型是由B指向E，PNP型是由E指向B，即P指向N。</p>
+</blockquote>
+<p>基区和发射区之间的PN结称为<strong>发射结</strong>；<br>基区和集电区之间的PN结称为<strong>集电结</strong>。</p>
+<h3 id="电流放大原理"><a href="#电流放大原理" class="headerlink" title="电流放大原理"></a>电流放大原理</h3><p>电流放大系数$\beta &#x3D; \dfrac{\Delta I_\mathrm{C}}{\Delta I_\mathrm{B}}$</p>
+<p>发射结正向偏置、集电结反向偏置时，可以使$I_\mathrm{C} \gg I_\mathrm{B}$，即电流放大作用。</p>
+<h3 id="特性曲线"><a href="#特性曲线" class="headerlink" title="特性曲线"></a>特性曲线</h3><h4 id="输入特性"><a href="#输入特性" class="headerlink" title="输入特性"></a>输入特性</h4><blockquote>
+<p>指当集-射极电压$U_\mathrm{CE}$为常数时，基极电流$I_\mathrm{B}$与发射结电压$U_\mathrm{BE}$之间的关系曲线。即输入是指<strong>基极输入</strong>。</p>
+</blockquote>
+<p>硅管的死区电压约为0.5V，锗管约为0.1V。当$U_\mathrm{BE}&lt;0.5\mathrm{V}$时(锗管为0.1V)，$I_\mathrm{B} \approx 0$，晶体管截止。当$U_\mathrm{BE}&gt;0.5\mathrm{V}$后，晶体管导通，$I_\mathrm{B}$增长很快。在正常工作情况下，NPN 型硅管的发射结工作电压$U_\mathrm{BE}\approx 0.6\sim0.7\mathrm{V}$，PNP型锗管的发射结工作电压$U_\mathrm{BE}\approx -0.2\sim-0.3\mathrm{V}$。</p>
+<h4 id="输出特性"><a href="#输出特性" class="headerlink" title="输出特性"></a>输出特性</h4><blockquote>
+<p>指当基极电流$I_\mathrm{B}$为常数时，集电极电流$I_\mathrm{C}$与晶体管压降$U_\mathrm{CE}$之间的关系曲线。</p>
+</blockquote>
+<p>当$I_\mathrm{B}$一定时，从发射区扩散到基区的电子数大致是一定的。在$U_\mathrm{CE}&lt;U_\mathrm{BE}$期间内，随着$U_\mathrm{CE}$的增大，内电场增强，$I_\mathrm{C}$线性增加。在$U_\mathrm{CE}&gt;U_\mathrm{BE}$以后，内电场已足够强，这些电子的绝大部分都被拉入集电区形成集电极电流$I_\mathrm{C}$，当$U_\mathrm{CE}$继续增大时，$I_\mathrm{C}$也不再有明显的增加，曲线几乎和横轴平行。</p>
+<p>当$I_\mathrm{B}$增大时，相应的$I_\mathrm{C}$也增大，曲线上移，此时$I_\mathrm{C}$只与$I_\mathrm{B}$有关。</p>
+<p>从输出特性曲线上可以看出，晶体管有三个工作区：</p>
+<ol>
+<li>放大区，是指曲线的中间部分。在这个区域内，发射结正偏，集电结反偏，即$U_\mathrm{CE}&gt;U_\mathrm{BE}$，此时$I_\mathrm{C}&#x3D;\beta I_\mathrm{B}$，晶体管放大导通，$I_\mathrm{C}$受$I_\mathrm{B}$的控制。</li>
+<li>截止区，是指$I_\mathrm{B}&#x3D;0$的那条曲线以下的狭窄区域。在这个区域内，发射结反偏，集电结反偏，即$U_\mathrm{BE}&lt;0$。此时$I_\mathrm{B}\approx0$，$I_\mathrm{C}\approx0$，晶体管截止。晶体管的C、E极之间相当于是一个断开的开关。</li>
+<li>饱和区，是指虚线以左的区域。在这个区域内，发射结正偏，集电结正偏，即$U_\mathrm{CE}&lt;U_\mathrm{BE}$，此时$I_\mathrm{C}$与$I_\mathrm{B}$没有正比关系，$I_\mathrm{C}\ne\beta I_\mathrm{B}$，晶体管饱和导通，$I_\mathrm{C}$的大小由外电路决定。晶体管饱和时，$U_\mathrm{CE}$很小，其最大饱和压降$U_\mathrm{CES}\approx0.3\mathrm{V}$。此时晶体管的C、E极之间相当于是一个闭合的开关。</li>
+</ol>
+<p>由以上分析可见，NPN型晶体管可靠工作在放大、饱和、截止的条件是：</p>
+<ul>
+<li>放大条件：$U_\mathrm{CE}&gt;U_\mathrm{BE}$（或$V_\mathrm{C}&gt;V_\mathrm{B}&gt;V_\mathrm{E}$）</li>
+<li>饱和条件：$U_\mathrm{CE}&lt;U_\mathrm{BE}$（或$V_\mathrm{B}&gt;V_\mathrm{C}&gt;V_\mathrm{E}$）</li>
+<li>截止条件：$U_\mathrm{BE} &lt; 0$</li>
+</ul>
+<h3 id="主要参数-1"><a href="#主要参数-1" class="headerlink" title="主要参数"></a>主要参数</h3><h4 id="共射极电流放大系数-bar-beta-和-beta"><a href="#共射极电流放大系数-bar-beta-和-beta" class="headerlink" title="共射极电流放大系数$\bar\beta$和$\beta$"></a>共射极电流放大系数$\bar\beta$和$\beta$</h4><p>共发射极接法的晶体管工作在放大状态时,集电极电流$I_\mathrm{C}$与基极电流$I_\mathrm{B}$的比值称为<strong>直流电流放大系数</strong>,用$\bar\beta$表示,即<br>$$ \bar\beta &#x3D; \dfrac{I_\mathrm{C}}{I_\mathrm{B}} $$<br>集电极电流的变化量$\Delta I_\mathrm{C}$与基极电流的变化量$\Delta I_\mathrm{B}$的比值称为<strong>交流电流放大系数</strong>，用$\beta$表示，即<br>$$ \beta &#x3D; \dfrac{\Delta I_\mathrm{C}}{\Delta I_\mathrm{B}} $$<br>由于输出特性曲线近于平行和等距，通常在估算时认为$\beta&#x3D;\bar\beta$。</p>
+<h4 id="集-基极反向饱和电流-I-mathrm-CBO"><a href="#集-基极反向饱和电流-I-mathrm-CBO" class="headerlink" title="集-基极反向饱和电流$I_\mathrm{CBO}$"></a>集-基极反向饱和电流$I_\mathrm{CBO}$</h4><p>是指当发射极开路（$I_\mathrm{E}&#x3D;0$）时，从集电极流向基极的反向电流。$I_\mathrm{CBO}$是集电区的少数载流子形成的，此电流受温度影响。实际应用中要求$I_\mathrm{CBO}$越小越好。硅管的$I_\mathrm{CBO}$比锗管小得多。</p>
+<h4 id="集-射极穿透电流-I-mathrm-CEO"><a href="#集-射极穿透电流-I-mathrm-CEO" class="headerlink" title="集-射极穿透电流$I_\mathrm{CEO}$"></a>集-射极穿透电流$I_\mathrm{CEO}$</h4><p>是指基极开路（$I_\mathrm{B}&#x3D;0$）时，从集电极流向发射极的电流。$I_\mathrm{CEO}$也是由少数载流子形成的，在数值上$I_\mathrm{CEO}&#x3D;(1+\beta)I_\mathrm{CBO}$。$I_\mathrm{CEO}$受温度影响很大，所以在实际应用中要选$I_\mathrm{CEO}$小的晶体管。</p>
+<h4 id="集电极最大允许电流-I-mathrm-CM"><a href="#集电极最大允许电流-I-mathrm-CM" class="headerlink" title="集电极最大允许电流$I_\mathrm{CM}$"></a>集电极最大允许电流$I_\mathrm{CM}$</h4><p>是指集电极电流$I_\mathrm{C}$增大到一定值时，晶体管的$\beta$值下降到正常值的$\dfrac23$时的集电极电流。因此，在使用晶体管时，若$I_\mathrm{C}&gt;I_\mathrm{CM}$，晶体管不一定损坏，但$\beta$值要下降。</p>
+<h4 id="集-射极击穿电压-U-mathrm-BR-CEO"><a href="#集-射极击穿电压-U-mathrm-BR-CEO" class="headerlink" title="集-射极击穿电压$U_\mathrm{(BR)CEO}$"></a>集-射极击穿电压$U_\mathrm{(BR)CEO}$</h4><p>是指基极开路时，加在集电极和发射极之间的最大允许电压。当晶体管的集-射极电压$U_\mathrm{CE}&gt;U_\mathrm{(BR)CEO}$时，$I_\mathrm{C}$将突然增大，晶体管被击穿，使用时要注意。</p>
+<h4 id="集电极最大允许耗散功率-P-mathrm-CM"><a href="#集电极最大允许耗散功率-P-mathrm-CM" class="headerlink" title="集电极最大允许耗散功率$P_\mathrm{CM}$"></a>集电极最大允许耗散功率$P_\mathrm{CM}$</h4><p>是指当晶体管因受热而引起的参数变化不超过允许值时，集电极所消耗的最大功率。由$P_\mathrm{CM}&#x3D;U_\mathrm{CE}I_\mathrm{C}$可知，$U_\mathrm{CE}$和$I_\mathrm{C}$在输出特性曲线上的关系为一双曲线,这条曲线称为$P_\mathrm{CM}$曲线。曲线左方$U_\mathrm{CE}I_\mathrm{C}&lt;P_\mathrm{CM}$，是晶体管安全工作区；右方则为<strong>过损耗区</strong>，是晶体管禁止工作区。</p>
+<p>以上参数中，$\beta$、$I_\mathrm{CBO}$、$I_\mathrm{CEO}$是<strong>衡量晶体管质量的主要指标</strong>。<br>$I_\mathrm{CM}$、$U_\mathrm{(BR)CEO}$、$P_\mathrm{CM}$是晶体管使用的<strong>极限参数</strong>。</p>
+
+    </div>
+    <!--文末结束语-->
+    
+        <div style="text-align:center;color: #ccc;font-size:24px;"> （EOF） </div>
+    
+    <!--页脚广告-->
+    
+    <v-divider></v-divider>
+    
+    <div class="post-nav">             
+              
+          
+            <div class="post-nav-button float-right">
+                <a class="font-weight-bold text-right" href="/2022/04/06/%E9%AB%98%E6%95%B0%E7%AC%94%E8%AE%B0/">      
+                    高数笔记
+                </a>
+                <v-icon>chevron_right</v-icon>
+            </div>
+        
+    </div>
+</v-card>
+
+
+
+        
+                            <div id="mobile-footer" class="d-block d-md-none">
+                                <v-divider></v-divider>
+                                <div id="mobile-footer-content">
+                                    <span>Theme: <a target="_blank" rel="noopener" href="https://github.com/kb1000fx/hexo-theme-insulin">Insulin</a> &nbsp; Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a></span><br>
+                                    <span> &copy; 2021 - 2022 Jim_shop</span>
+                                </div>
+                            </div>                   
+                        </v-col>                                            
+                    </v-row>
+                </v-container>
+            </v-content>
+        </v-app>
+    </div>
+    
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+<script src="https://cdn.jsdelivr.net/npm/vuetify@2.2.30"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-base64@3.5.2/base64.min.js"></script>
+
+<script src="/js/main.js"></script>
+
+
+
+
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@8.13.10/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({
+        startOnLoad: true,
+        theme: "default"
+    });</script>
+
+
+
+
+
+</body>
+</html>

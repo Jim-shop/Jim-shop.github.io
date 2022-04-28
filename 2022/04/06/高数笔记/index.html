@@ -268,9 +268,9 @@
     
     <div class="post-content typo">
         <h2 id="平面点集"><a href="#平面点集" class="headerlink" title="平面点集"></a>平面点集</h2><p>在平面上引入了一个直角坐标系后，平面上的点$P$与有序二元实数组$(x,y)$之间建立了一一对应。<br>因此可以把有序实数组$(x,y)$与平面上的点$P$视作是等同的。<br>这种建立了坐标系的平面称为<strong>坐标平面</strong>。</p>
-<p>坐标平面上具有某种性质$P$的点的集合，称为<strong>平面点集</strong>，记作</p>
-<script type="math/tex; mode=display">E=\lbrace (x,y) | \text{ $(x,y)$ 具有性质 $P$ } \rbrace</script><p>设 $P_0(x_0,y_0)$ 是 $xOy$ 平面上的一个点，$\delta$ 是某一个<strong>正数</strong>，与点 $P_0(x_0,y_0)$ 距离小于 $\delta$ 的点 $P(x,y)$ 的<strong>全体</strong>，称为点 $P_0$ 的 $\delta$ <strong>邻域</strong>，记作 $U(P_0,\delta)$ ，即</p>
-<script type="math/tex; mode=display">U(P_0,\delta) = \lbrace P | |PP_0| \lt \delta \rbrace</script><p>去心邻域 $ \mathring{U}(P_0, \delta) $</p>
+<p>坐标平面上具有某种性质$P$的点的集合，称为<strong>平面点集</strong>，记作<br>$$ E&#x3D;\lbrace (x,y) | \text{ $(x,y)$ 具有性质 $P$ } \rbrace $$</p>
+<p>设 $P_0(x_0,y_0)$ 是 $xOy$ 平面上的一个点，$\delta$ 是某一个<strong>正数</strong>，与点 $P_0(x_0,y_0)$ 距离小于 $\delta$ 的点 $P(x,y)$ 的<strong>全体</strong>，称为点 $P_0$ 的 $\delta$ <strong>邻域</strong>，记作 $U(P_0,\delta)$ ，即<br>$$ U(P_0,\delta) &#x3D; \lbrace P | |PP_0| \lt \delta \rbrace $$</p>
+<p>去心邻域 $ \mathring{U}(P_0, \delta) $</p>
 <h2 id="点与点集的关系"><a href="#点与点集的关系" class="headerlink" title="点与点集的关系"></a>点与点集的关系</h2><p>设点$P$，点集$E$，两者关系必为三者之一：</p>
 <ul>
 <li>内点<br>（存在 $U(P)$ 使$U(P)\subset E$）</li>
@@ -287,23 +287,9 @@
 <li>闭集（含所有边界）</li>
 <li>既非开集也非闭集</li>
 </ul>
-<h2 id="空间曲线切线条件"><a href="#空间曲线切线条件" class="headerlink" title="空间曲线切线条件"></a>空间曲线切线条件</h2><p>对于参数方程型：</p>
-<script type="math/tex; mode=display">\begin{cases}
-x = \phi(t) \\
-y = \psi(t) \\
-z = \omega(t)
-\end{cases}, \,
-t\in[\alpha, \beta]</script><p>要求三个函数都在$[\alpha, \beta]$上可导（没说连续），且三个导数<strong>不同时为零</strong>。</p>
-<p>对于：</p>
-<script type="math/tex; mode=display">\begin{cases}
-y = \phi(x)\\
-z = \psi(x)
-\end{cases}</script><p>取$x$做参数，可看作参数方程讨论。</p>
-<p>对于隐函数：</p>
-<script type="math/tex; mode=display">\begin{cases}
-F(x,y,z)=0 \\
-G(x,y,z)=0
-\end{cases}</script><p>要求$F$、$G$有对各个变量的<strong>连续</strong>偏导数</p>
+<h2 id="空间曲线切线条件"><a href="#空间曲线切线条件" class="headerlink" title="空间曲线切线条件"></a>空间曲线切线条件</h2><p>对于参数方程型：<br>$$\begin{cases}<br>x &#x3D; \phi(t) \<br>y &#x3D; \psi(t) \<br>z &#x3D; \omega(t)<br>\end{cases}, ,<br>t\in[\alpha, \beta]$$<br>要求三个函数都在$[\alpha, \beta]$上可导（没说连续），且三个导数<strong>不同时为零</strong>。</p>
+<p>对于：<br>$$\begin{cases}<br>y &#x3D; \phi(x)\<br>z &#x3D; \psi(x)<br>\end{cases}$$<br>取$x$做参数，可看作参数方程讨论。</p>
+<p>对于隐函数：<br>$$\begin{cases}<br>F(x,y,z)&#x3D;0 \<br>G(x,y,z)&#x3D;0<br>\end{cases}$$<br>要求$F$、$G$有对各个变量的<strong>连续</strong>偏导数</p>
 <h2 id="曲面的切平面条件"><a href="#曲面的切平面条件" class="headerlink" title="曲面的切平面条件"></a>曲面的切平面条件</h2><p>偏导数<strong>连续</strong>且<strong>不同时为零</strong>。</p>
 
     </div>
@@ -316,11 +302,18 @@ G(x,y,z)=0
     <v-divider></v-divider>
     
     <div class="post-nav">             
+        
+            <div class="post-nav-button float-left">
+                <v-icon>chevron_left</v-icon>
+                <a class="font-weight-bold text-left" href="/2022/04/21/%E6%A8%A1%E7%94%B5%E7%AC%94%E8%AE%B0/">
+                    模电笔记
+                </a>
+            </div>
               
           
             <div class="post-nav-button float-right">
-                <a class="font-weight-bold text-right" href="/2022/03/29/%E3%80%8A%E7%94%B5%E8%B7%AF%E4%B8%8E%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E3%80%8B%E7%AC%94%E8%AE%B0/">      
-                    《电路与电子技术》笔记
+                <a class="font-weight-bold text-right" href="/2022/03/29/%E7%94%B5%E8%B7%AF%E7%AC%94%E8%AE%B0/">      
+                    电路笔记
                 </a>
                 <v-icon>chevron_right</v-icon>
             </div>

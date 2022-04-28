@@ -212,6 +212,7 @@
     
     <div class="post-content typo">
         <h1 id="gitignore文件编写方法"><a href="#gitignore文件编写方法" class="headerlink" title=".gitignore文件编写方法"></a>.gitignore文件编写方法</h1><h2 id="1-井号开头的行是注释。"><a href="#1-井号开头的行是注释。" class="headerlink" title="1. 井号开头的行是注释。"></a>1. 井号开头的行是注释。</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 井号开头的行是注释。</span></span><br></pre></td></tr></table></figure>
+
 <h2 id="2-格式参照shell的glob模式"><a href="#2-格式参照shell的glob模式" class="headerlink" title="2. 格式参照shell的glob模式"></a>2. 格式参照shell的glob模式</h2><ul>
 <li>星号（“*”）匹配0个或任意个字符，问号（“?”）匹配一个任意字符<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">doc/*.txt <span class="comment"># 匹配doc/notes.txt，但不会匹配doc/server/arch.txt</span></span><br></pre></td></tr></table></figure></li>
 <li>使用两个星号表示匹配任意中间目录<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a/**/z <span class="comment">#匹配a/z，a/b/c/z等</span></span><br></pre></td></tr></table></figure></li>
@@ -219,10 +220,9 @@
 </ul>
 <h2 id="3-其他规则："><a href="#3-其他规则：" class="headerlink" title="3. 其他规则："></a>3. 其他规则：</h2><ul>
 <li>默认是递归匹配。</li>
-<li>以斜杠（“/”）开头，阻止递归匹配。<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/TODO <span class="comment"># 只忽略当前目录下的 TODO 文件，而不忽略 subdir/TODO</span></span><br></pre></td></tr></table></figure></li>
-<li>以斜杠（“/”）结尾，指定只匹配目录。<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">build/  <span class="comment"># 忽略任何目录下名为 build 的文件夹</span></span><br></pre></td></tr></table></figure></li>
-<li>以叹号（“!”）开头，表示取反，告诉Git不要忽略这个文件或目录。<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!lib.a  <span class="comment"># 跟踪所有的 lib.a，即便你在前面忽略了 .a 文件</span></span><br></pre></td></tr></table></figure>
-</li>
+<li>以斜杠（“&#x2F;”）开头，阻止递归匹配。<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/TODO <span class="comment"># 只忽略当前目录下的 TODO 文件，而不忽略 subdir/TODO</span></span><br></pre></td></tr></table></figure></li>
+<li>以斜杠（“&#x2F;”）结尾，指定只匹配目录。<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">build/  <span class="comment"># 忽略任何目录下名为 build 的文件夹</span></span><br></pre></td></tr></table></figure></li>
+<li>以叹号（“!”）开头，表示取反，告诉Git不要忽略这个文件或目录。<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!lib.a  <span class="comment"># 跟踪所有的 lib.a，即便你在前面忽略了 .a 文件</span></span><br></pre></td></tr></table></figure></li>
 </ul>
 
     </div>
